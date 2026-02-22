@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+/* Inter Font */
+@font-face {
+  font-family: "Rethink_Sans";
+  src: url("~/assets/fonts/Rethink_Sans/RethinkSans-Regular.ttf") format("ttf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rethink_Sans";
+  src: url("~/assets/fonts/Rethink_Sans/RethinkSans-Medium.ttf") format("ttf");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rethink_Sans";
+  src: url("~/assets/fonts/Rethink_Sans/RethinkSans-SemiBold.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rethink_Sans";
+  src: url("~/assets/fonts/Rethink_Sans/RethinkSans-Bold.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Rethink_Sans";
+  src: url("~/assets/fonts/Rethink_Sans/RethinkSans-ExtraBold.ttf") format("ttf");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.custom-btn {
+    @include flex($justify: flex-start);
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: $size-sm;
+    border: 0px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  color: white;
+}
+
+.description {
+    font-size: 16px;
+    font-weight: 500;
+    color: $desc-color;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+}
+
+.flex-grow-1 { flex-grow: 1; }
+
+// media query
+@media (max-width: $media-md) {
+    .grid-2 { grid-template-columns: 1fr; }
+} 

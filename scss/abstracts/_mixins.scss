@@ -1,0 +1,27 @@
+// Flexbox helper
+@mixin flex($justify: flex-start, $align: center, $direction: row, $gap: 5px, $wrap: wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direction;
+    gap: $gap;
+    flex-wrap: $wrap;
+}
+
+// Media Queries Breakpoints
+$breakpoints: (
+    'xs': 480px,
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px
+);
+
+
+
+// Reusable card hover state
+@mixin card-hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}

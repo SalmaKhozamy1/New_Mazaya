@@ -1,0 +1,43 @@
+////////////// Colors ///////////////
+$primary-color: #F05D2A;
+$light-primary-color: rgba(244, 110, 38, 0.16);
+$secondary-color: #1D5166;
+$gray-color: #EFEFEF;
+$light-gray-color: #F7F7F7;
+$desc-color: #606060;
+$font-color: #000;
+$white: #ffffff;
+$success-color: #34A853;
+$light-success-color: rgba(52, 168, 83, 0.08);
+
+////////////// Fonts ///////////////
+$font-primary: 'Rethink Sans', sans-serif;
+
+$size-xs: 14px;
+$size-sm: 16px;
+$size-md: 18px;
+$size-lg: 24px;
+$size-xl: 40px;
+$size-xxl: 48px;
+
+
+// Media Query
+$media-xs: 576px;
+$media-sm: 768px;
+$media-md: 991px;
+$media-lg: 1200px;
+$media-xl: 1400px;
+
+///////////// Spacing & Layout //////////////
+$main-inline-padding: 8vw;
+
+///////////// Shadows //////////////
+// Specific shadows from original code
+$shadow-input: 0 40px 100px rgba(0, 0, 0, 0.05);
+$shadow-card: 0 30px 60px rgba(0, 0, 0, 0.08);
+$shadow-float-icon: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+///////////// Transitions //////////////
+$transition-base: all 0.3s ease;
+$transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+$transition-bounce: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);

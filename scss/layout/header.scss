@@ -1,0 +1,140 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Navbar
+.navbar {
+    padding: 20px $main-inline-padding;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    .navbar-toggler {
+        border: none;
+        padding: 0;
+        &:focus { box-shadow: none; }
+    }
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        z-index: 1050;
+        @include flex($direction: column, $justify: center);
+        padding: 40px;
+        opacity: 0;
+        visibility: hidden;
+        transition: $transition-base;
+        overflow-y: auto;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+        }
+    }
+
+    .menu-header {
+        position: absolute;
+        top: 30px;
+        left: $main-inline-padding;
+        right: $main-inline-padding;
+        @include flex($justify: space-between);
+        width: calc(100% - 2 * #{$main-inline-padding});
+
+        .btn-close-custom {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: $secondary-color;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+        }
+    }
+
+    .navbar-nav {
+        @include flex($justify: center, $gap: 0);
+        width: 100%;
+        margin: 0;
+
+        .nav-item {
+            position: relative;
+            padding: 0 20px;
+
+            .nav-link {
+                color: $secondary-color;
+                font-size: 18px;
+                font-weight: 500;
+                padding: 0;
+                transition: color 0.2s;
+                font-family: "Inter", sans-serif;
+
+                &:hover, &.active {
+                    color: $secondary-color;
+                    border-bottom: 2px solid $primary-color;
+                }
+            }
+
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 16px;
+                width: 1px;
+                background-color: $secondary-color;
+                opacity: 0.3;
+            }
+        }
+    }
+
+    .language-switcher {
+        position: absolute;
+        bottom: 40px;
+        right: $main-inline-padding;
+        background-color: #f8f9fa;
+        border-radius: 20px;
+        padding: 4px;
+        @include flex;
+
+        .lang-text {
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 14px;
+            color: #6c757d;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+
+            &.active {
+                background-color: white;
+                color: $primary-color;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 20px;
+        .menu-header {
+            left: 20px;
+            right: 20px;
+            width: calc(100% - 40px);
+        }
+        .language-switcher { right: 20px; }
+        .navbar-nav {
+            flex-direction: column;
+            gap: 15px;
+            .nav-item {
+                padding: 5px;
+                &::after { display: none; }
+                .nav-link { font-size: 20px; }
+            }
+        }
+    }
+}
