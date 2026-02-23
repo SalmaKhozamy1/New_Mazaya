@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mazaya</title>
+
+  <!-- Bootstrap5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Main Css -->
+  <link rel="stylesheet" href="scss/main.css" />
+
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <main class="flex-grow-1">
+      <div class="bg-gradient position-absolute top-0">
+        <img src="assets/images/hero_bgs.svg" class="w-100" alt="bg" />
+      </div>
+
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.svg" alt="logo_img" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="assets/images/icons/menu_icon.svg" alt="menu_btn" />
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Menu Header for Overlay -->
+            <div class="menu-header">
+              <a class="navbar-brand" href="#">
+                <img src="assets/images/logo.svg" alt="logo_img" />
+              </a>
+              <button class="btn-close-custom" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-label="Close">
+                &times;
+              </button>
+            </div>
+
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Careers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-disabled="true">Document Center</a>
+              </li>
+            </ul>
+            <div class="language-switcher">
+              <span class="lang-text active">English</span>
+              <span class="lang-text">Arabic</span>
+            </div>
+          </div>
+
+        </div>
+      </nav>
+
+      <!-- Main Section -->
+      <section class="main_page_header">
+        <div class="container">
+          <div class="main-text">
+            <h1 class="main_title">
+                Join our team.
+                <span class="subtitle-orange">Start your journey with us today.</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Job Application Section -->
+      <section class="job-apply-page">
+        <div class="container">
+            
+            <!-- Stepper Container -->
+            <div class="stepper-container custom-card">
+                <div class="stepper">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Upload your CV</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Personal Information</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Academic qualifications</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Work Experience</div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Training Courses</div>
+                    </div>
+                    <div class="step" data-step="6">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Health Information</div>
+                    </div>
+                    <div class="step" data-step="7">
+                        <div class="step-circle"></div>
+                        <div class="step-label">Job Preferences</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Content Container -->
+            <div class="form-content-container custom-card">
+                <form id="applyForm">
+                    <!-- Step 1: Upload CV -->
+                    <div class="form-step active" data-step="1">
+                        <div class="step-header">
+                            <div class="icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="12"></line><line x1="15" y1="15" x2="12" y2="12"></line></svg>
+                            </div>
+                            <h2 class="step-title">Upload CV</h2>
+                        </div>
+                        
+                        <div class="upload-area" onclick="document.getElementById('cvUpload').click()">
+                            <input type="file" id="cvUpload" class="d-none" accept=".pdf,.doc,.docx">
+                            <div class="upload-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                            </div>
+                            <p class="upload-text">Drag & Drop or <span>Choose File</span> to Upload your CV</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Personal Information -->
+                    <div class="form-step" data-step="2">
+                        <!-- AI Autofill Header -->
+                        <div class="autofill-banner custom-card">
+                            <div class="banner-info">
+                                <h3 class="banner-title">AutoFill Your Info Using CV</h3>
+                                <p class="banner-desc">Let AI analyze your CV to automatically fill the application fields.</p>
+                            </div>
+                            <button type="button" class="btn-autofill">
+                                Auto-fill my info from CV
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Personal Info Card -->
+                        <div class="form-section-card custom-card">
+                            <div class="section-header">
+                                <div class="header-left">
+                                    <div class="icon-box">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    </div>
+                                    <h2 class="section-title">Personal Information</h2>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="Enter Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Date of birth<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="DD/MM/YYYY">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Gender<span class="req-star">*</span></label>
+                                        <div class="gender-switch">
+                                            <div class="btn-gender active">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                                Male
+                                            </div>
+                                            <div class="btn-gender">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                                Female
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Marital Status<span class="req-star">*</span></label>
+                                        <select class="form-select">
+                                            <option selected>Single</option>
+                                            <option>Married</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Nationality<span class="req-star">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Nationality</option>
+                                            <option>Saudi</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Country<span class="req-star">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Country</option>
+                                            <option>Saudi Arabia</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">City<span class="req-star">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>City</option>
+                                            <option>Riyadh</option>
+                                            <option>Jeddah</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Current Address<span class="req-star">*</span></label>
+                                        <select class="form-select">
+                                            <option selected disabled>Current Address</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group mb-0">
+                                        <label class="form-label">Upload your photo<span class="req-star">*</span></label>
+                                        <div class="upload-area py-5" style="padding: 3rem 2rem !important;">
+                                            <div class="upload-icon" style="width: 50px; height: 50px;">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                            </div>
+                                            <p class="upload-text" style="font-size: 16px;">Drag & Drop or <span>Choose File</span> to Upload your photo</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Info Card -->
+                        <div class="form-section-card custom-card">
+                            <div class="section-header">
+                                <div class="header-left">
+                                    <div class="icon-box">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    </div>
+                                    <h2 class="section-title">Contact Information</h2>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                            </div>
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Email<span class="req-star">*</span></label>
+                                        <input type="email" class="form-control" placeholder="mazaya@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="2255555">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">LinkedIn profile</label>
+                                        <input type="text" class="form-control" placeholder="mazaya@gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Portfolio URL<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="2255555">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="3"><div class="step-header"><h2 class="step-title">Academic qualifications</h2></div><p class="mt-4">Academic qualification details here.</p></div>
+                    <div class="form-step" data-step="4"><div class="step-header"><h2 class="step-title">Work Experience</h2></div><p class="mt-4">Work experience history here.</p></div>
+                    <div class="form-step" data-step="5"><div class="step-header"><h2 class="step-title">Training Courses</h2></div><p class="mt-4">Training and courses list here.</p></div>
+                    <div class="form-step" data-step="6"><div class="step-header"><h2 class="step-title">Health Information</h2></div><p class="mt-4">Health information disclosures here.</p></div>
+                    <div class="form-step" data-step="7"><div class="step-header"><h2 class="step-title">Job Preferences</h2></div><p class="mt-4">Job preferences and expectations here.</p></div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-prev" id="prevBtn" onclick="changeStep(-1)" disabled>Previous</button>
+                        <button type="button" class="btn btn-next" id="nextBtn" onclick="changeStep(1)">Next Step</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+        let currentStep = 1;
+
+        function changeStep(stepDelta) {
+            const steps = document.querySelectorAll('.form-step');
+            const stepperSteps = document.querySelectorAll('.step');
+            
+            if (currentStep + stepDelta < 1 || currentStep + stepDelta > steps.length) return;
+
+            // Hide/Deactivate current step
+            steps[currentStep - 1].classList.remove('active');
+            stepperSteps[currentStep - 1].classList.remove('active');
+            
+            if (stepDelta > 0) {
+                stepperSteps[currentStep - 1].classList.add('completed');
+            } else {
+                stepperSteps[currentStep + stepDelta - 1].classList.remove('completed');
+            }
+            
+            // Update current step index
+            currentStep += stepDelta;
+            
+            // Show/Activate new step
+            steps[currentStep - 1].classList.add('active');
+            stepperSteps[currentStep - 1].classList.add('active');
+
+            // Update buttons State
+            document.getElementById('prevBtn').disabled = currentStep === 1;
+            document.getElementById('nextBtn').innerText = currentStep === steps.length ? 'Submit Application' : 'Next Step';
+        }
+
+        // Drag and Drop Logic
+        const uploadArea = document.querySelector('.upload-area');
+        if (uploadArea) {
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#F05D2A';
+            });
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = '#EFEFEF';
+            });
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#EFEFEF';
+                const files = e.dataTransfer.files;
+                if (files.length) {
+                    document.getElementById('cvUpload').files = files;
+                    alert('File uploaded: ' + files[0].name);
+                }
+            });
+        }
+    </script>
+
+
+    <!-- Footer -->
+    <footer>
+    <div class="container">    
+      <div class="main-text">
+        <div class="badge-pill">
+          <img src="assets/images/icons/mazaya_icon.svg" alt="icon-img"  />
+          <span> Your Intelligent IT Partner </span>
+        </div>
+
+        <h1 class="footer_title">
+          Software that works together
+          <span class="subtitle-orange">So your business moves faster.</span>
+        </h1>
+
+        <p class="footer_desc">
+         We design, integrate, and manage smart digital solutions that simplify operations and drive long-term success.
+        </p>
+
+        <div class="footer-input-wrapper">
+          <input type="text" />
+          <button class="btn-start custom-btn btn-secondary">
+            Get Started
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+              <path d="M12.7702 8.51203L9.14348 7.17187L7.80755 3.54234C7.72843 3.32742 7.5853 3.14193 7.39745 3.01091C7.20961 2.87989 6.9861 2.80964 6.75708 2.80964C6.52805 2.80964 6.30454 2.87989 6.1167 3.01091C5.92886 3.14193 5.78572 3.32742 5.70661 3.54234L4.36223 7.17187L0.732702 8.50781C0.517777 8.58692 0.332291 8.73006 0.20127 8.9179C0.0702496 9.10575 0 9.32926 0 9.55828C0 9.7873 0.0702496 10.0108 0.20127 10.1987C0.332291 10.3865 0.517777 10.5296 0.732702 10.6087L4.36223 11.9531L5.69817 15.5827C5.77728 15.7976 5.92042 15.9831 6.10826 16.1141C6.2961 16.2451 6.51962 16.3154 6.74864 16.3154C6.97766 16.3154 7.20117 16.2451 7.38902 16.1141C7.57686 15.9831 7.71999 15.7976 7.79911 15.5827L9.14348 11.9531L12.773 10.6172C12.9879 10.5381 13.1734 10.3949 13.3044 10.2071C13.4355 10.0193 13.5057 9.79574 13.5057 9.56672C13.5057 9.33769 13.4355 9.11418 13.3044 8.92634C13.1734 8.7385 12.9879 8.59536 12.773 8.51625L12.7702 8.51203ZM8.51067 10.9842C8.43432 11.0124 8.36498 11.0567 8.30744 11.1143C8.2499 11.1718 8.20553 11.2411 8.17739 11.3175L6.75286 15.177L5.33114 11.3203C5.30304 11.2432 5.2584 11.1731 5.20034 11.115C5.14227 11.057 5.0722 11.0123 4.99505 10.9842L1.13841 9.5625L4.99505 8.14078C5.0722 8.11269 5.14227 8.06804 5.20034 8.00998C5.2584 7.95191 5.30304 7.88184 5.33114 7.80469L6.75286 3.94805L8.17458 7.80469C8.20272 7.88104 8.24709 7.95038 8.30463 8.00792C8.36217 8.06546 8.43151 8.10983 8.50786 8.13797L12.3673 9.5625L8.51067 10.9842ZM9.00286 2.25C9.00286 2.10082 9.06212 1.95774 9.16761 1.85225C9.2731 1.74676 9.41617 1.6875 9.56536 1.6875H10.6904V0.5625C10.6904 0.413316 10.7496 0.270242 10.8551 0.164752C10.9606 0.0592632 11.1037 0 11.2529 0C11.402 0 11.5451 0.0592632 11.6506 0.164752C11.7561 0.270242 11.8154 0.413316 11.8154 0.5625V1.6875H12.9404C13.0895 1.6875 13.2326 1.74676 13.3381 1.85225C13.4436 1.95774 13.5029 2.10082 13.5029 2.25C13.5029 2.39918 13.4436 2.54226 13.3381 2.64775C13.2326 2.75324 13.0895 2.8125 12.9404 2.8125H11.8154V3.9375C11.8154 4.08668 11.7561 4.22976 11.6506 4.33525C11.5451 4.44074 11.402 4.5 11.2529 4.5C11.1037 4.5 10.9606 4.44074 10.8551 4.33525C10.7496 4.22976 10.6904 4.08668 10.6904 3.9375V2.8125H9.56536C9.41617 2.8125 9.2731 2.75324 9.16761 2.64775C9.06212 2.54226 9.00286 2.39918 9.00286 2.25ZM16.3154 5.625C16.3154 5.77418 16.2561 5.91726 16.1506 6.02275C16.0451 6.12824 15.902 6.1875 15.7529 6.1875H15.1904V6.75C15.1904 6.89918 15.1311 7.04226 15.0256 7.14775C14.9201 7.25324 14.777 7.3125 14.6279 7.3125C14.4787 7.3125 14.3356 7.25324 14.2301 7.14775C14.1246 7.04226 14.0654 6.89918 14.0654 6.75V6.1875H13.5029C13.3537 6.1875 13.2106 6.12824 13.1051 6.02275C12.9996 5.91726 12.9404 5.77418 12.9404 5.625C12.9404 5.47582 12.9996 5.33274 13.1051 5.22725C13.2106 5.12176 13.3537 5.0625 13.5029 5.0625H14.0654V4.5C14.0654 4.35082 14.1246 4.20774 14.2301 4.10225C14.3356 3.99676 14.4787 3.9375 14.6279 3.9375C14.777 3.9375 14.9201 3.99676 15.0256 4.10225C15.1311 4.20774 15.1904 4.35082 15.1904 4.5V5.0625H15.7529C15.902 5.0625 16.0451 5.12176 16.1506 5.22725C16.2561 5.33274 16.3154 5.47582 16.3154 5.625Z" fill="white"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="footer-catergory grid-3 w-75">
+          <div> <img src="assets/images/icons/Automation-driven.svg" alt="icon-img"> <span>Automation-driven</span></div>
+          <div> <img src="assets/images/icons/Data-connected.svg" alt="icon-img">  <span>Data-connected</span></div>
+          <div> <img src="assets/images/icons/future.svg" alt="icon-img"> <span>Future-ready</span> </div>
+        </div>
+    </div>
+   </footer>
+
+   <!-- bottom bg -->
+   <div class="bg-gradient-bottom position-absolute bottom-0">
+    <img src="assets/images/hero_bgs.svg" class="w-100" alt="bg" />
+  </div>
+</body>
+<!-- Bootstrap 5 JS Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/main.js"></script>
+
+</html>

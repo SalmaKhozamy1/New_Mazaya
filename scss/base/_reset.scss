@@ -18,7 +18,7 @@ p {
 }
 
 section {
-    margin-top: 2vw;
+    margin-top: clamp(0.7rem, 2vw, 2.5rem);
     padding-inline: $main-inline-padding;
     position: relative;
 }

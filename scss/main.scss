@@ -9,7 +9,7 @@
 
 // layout
 @use 'layout/header';
-// @use 'layout/footer';
+@use 'layout/footer';
 
 // components
 // @use 'components/buttons';
@@ -17,7 +17,11 @@
 
 // pages
 @use 'pages/home';
-// @use 'pages/about';
+@use 'pages/contact-us';
+@use 'pages/careers';
+@use 'pages/job-details';
+@use 'pages/job-apply';
+@use 'pages/about-us';
 
 // main classes
 .w-img {
@@ -28,6 +32,7 @@
     height: 100%;
     width: auto;
 }
+
 .main-text, .secondary-main-text {
     max-width: 1000px;
     @include flex($direction: column, $justify: center, $gap: 1.1rem);
@@ -99,9 +104,10 @@
 
 .bg-gradient, .bg-gradient-bottom {
     width: 100%;
-    height: auto;
+    height: 100%;
     z-index: -1;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .bg-gradient-bottom { rotate: 180deg; }
@@ -136,7 +142,16 @@
         font-weight: 500;
         font-size: $size-sm;
     }
+
+    &--sm {
+        border-radius: 16px;
+        padding: 2rem;
+        &:hover {
+            transform: none;
+        }
+    }
 }
+
 // .section-title, footer .footer_title, .main-text .main_title, .secondary-main-text .hero_title {
 //     font-size: 40px;
 //     font-weight: 600;
@@ -289,33 +304,98 @@
 }
 
 // FAQ
-.FAQ_accordion {
-    @include flex($direction: column, $gap: 16px); width: 100%;
-    .accordion-item {
-        border-radius: 16px; width: 100%; border: 1px solid #EFEFEF; background: $light-gray-color; padding: 24px 20px;
-        &:has(.accordion-button:not(.collapsed)) { background-color: #fff; .accordion_no { background-color: $primary-color; color: #fff; } }
-        .accordion-header { @include flex($wrap: nowrap, $gap: 10px); }
-        .accordion_no { color: #000; font-size: 16px; font-weight: 500; min-width: 24px; @include flex($justify: center); height: 24px; border-radius: 12px; border: 1px solid #EFEFEF; background: #FFF; box-shadow: 0 1px 1px rgba(0,0,0,0.04); }
-        .accordion-button { padding: 0; border: 0; box-shadow: none; background-color: transparent; color: #000; font-size: 18px; font-weight: 500; &:focus { border: 0; } }
-        .accordion-body { font-size: 18px; color: $desc-color; padding-inline-start: 36px; }
+.faq-section {
+    .main_title {
+        color: $font-color;
+        margin-bottom: 2rem;
     }
-}
 
-// Footer
-footer {
-    padding-block: 4rem;
-    .badge-pill { color: $secondary-color !important; }
-    .footer-input-wrapper .btn-start { background-color: $secondary-color; }
-    .footer-catergory { margin: auto; div { @include flex($justify: center, $gap: 8px); } }
+    .FAQ_accordion {
+        @include flex($direction: column, $gap: 16px); width: 100%;
+        .accordion-item {
+            border-radius: 16px; 
+            width: 100%; 
+            border: 1px solid #EFEFEF; 
+            background: $light-gray-color; 
+            padding: 24px 20px;
+            &:has(.accordion-button:not(.collapsed)) { 
+                background-color: #fff; 
+                .accordion_no { 
+                    background-color: $primary-color; 
+                    color: #fff; 
+                } 
+            }
+            .accordion-header { 
+                @include flex($wrap: nowrap, $gap: 10px); 
+            }
+            .accordion_no { 
+                color: #000; 
+                font-size: 16px; 
+                font-weight: 500; 
+                min-width: 24px; 
+                @include flex($justify: center); 
+                height: 24px; 
+                border-radius: 12px; 
+                border: 1px solid #EFEFEF; 
+                background: #FFF; 
+                box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+            }
+            .accordion-button { 
+                padding: 0; 
+                border: 0; 
+                box-shadow: none; 
+                background-color: transparent; 
+                color: #000; 
+                font-size: 18px; 
+                font-weight: 500; 
+                &:focus { border: 0; } 
+            }
+            .accordion-body { 
+                font-size: 18px; 
+                color: $desc-color; 
+                padding-inline-start: 36px; 
+            }
+        }
+    }
 }
 
 // Utilities
 .btn-primary {
-    @include flex($justify: center, $gap: 6px);
-    background: $primary-color; color: #fff; border: none; padding: 0.7rem 1.4rem; border-radius: 12px; font-weight: 400; transition: $transition-base;
+    background: $primary-color; 
+    color: #fff; 
+    border: none; 
 }
 
-.text-white { color: #fff !important; }
 .opacity-75 { opacity: 0.75; }
-.mt-4 { margin-top: 1.5rem !important; }
-.w-100 { width: 100% !important; }
+
+.small-main-text {
+    align-items: start;
+    margin: 0;
+
+    .badge-pill {
+        font-size: $size-xs;
+        font-weight: 500;
+    }
+    .main_title {
+        font-size: 36px;
+    }
+    .description {
+        font-size: $size-xs;
+        font-weight: 400;
+    }
+}
+.main_page_header {
+    margin-top: 2.8rem;
+    margin-bottom: .5rem;
+    .main-text {
+        text-align: start;
+        margin: 0;
+        align-items: start;
+    }
+    .main_title {
+        font-size: 32px;
+    }
+    .subtitle-orange {
+        font-size: $size-xl;
+    }
+}

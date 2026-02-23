@@ -1,0 +1,263 @@
+.about-us-page {
+  padding-bottom: 5rem;
+}
+.about-us-page .about-content-section {
+  margin-bottom: 5rem;
+}
+.about-us-page .about-content-section .about-card {
+  padding: 3.5rem;
+}
+.about-us-page .about-content-section .about-card .card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+@media (max-width: 991px) {
+  .about-us-page .about-content-section .about-card .card-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+}
+.about-us-page .about-content-section .about-card .card-grid .image-box {
+  position: relative;
+}
+.about-us-page .about-content-section .about-card .card-grid .image-box img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+.about-us-page .about-content-section .about-card .card-grid .image-box::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #F05D2A 10%, transparent 10%);
+  background-size: 15px 15px;
+  opacity: 0.2;
+  z-index: -1;
+}
+.about-us-page .about-content-section .about-card .card-grid .text-box .badge-pill {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 991px) {
+  .about-us-page .about-content-section .about-card .card-grid .text-box .badge-pill {
+    margin-inline: auto;
+  }
+}
+.about-us-page .about-content-section .about-card .card-grid .text-box h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1D5166;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+.about-us-page .about-content-section .about-card .card-grid .text-box p {
+  font-size: 18px;
+  color: #606060;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+.about-us-page .vision-mission-section {
+  margin-bottom: 5rem;
+}
+.about-us-page .vision-mission-section .vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .about-us-page .vision-mission-section .vm-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.about-us-page .vision-mission-section .vm-grid .vm-card {
+  padding: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  text-align: start;
+}
+.about-us-page .vision-mission-section .vm-grid .vm-card .icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(240, 93, 42, 0.05);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+  color: #F05D2A;
+}
+.about-us-page .vision-mission-section .vm-grid .vm-card .icon-box svg {
+  width: 30px;
+  height: 30px;
+}
+.about-us-page .vision-mission-section .vm-grid .vm-card h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000;
+}
+.about-us-page .vision-mission-section .vm-grid .vm-card p {
+  font-size: 16px;
+  color: #606060;
+  line-height: 1.7;
+  margin: 0;
+}
+.about-us-page .journey-section {
+  padding-block: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.about-us-page .journey-section .journey-container {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 8rem;
+  flex-wrap: wrap;
+}
+.about-us-page .journey-section .journey-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 800px;
+  transform: translateX(-50%);
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200"><path d="M400,0 Q600,150 400,300 T400,600 T400,900 T400,1200" fill="none" stroke="%23F05D2A" stroke-width="2" stroke-dasharray="8,8" opacity="0.3"/></svg>') no-repeat center;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 991px) {
+  .about-us-page .journey-section .journey-container::before {
+    display: none;
+  }
+}
+.about-us-page .journey-section .journey-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .about-us-page .journey-section .journey-item {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+.about-us-page .journey-section .journey-item .journey-card {
+  padding: 2rem;
+  background: #FFF9F6;
+  border: 1px solid rgba(240, 93, 42, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+.about-us-page .journey-section .journey-item .journey-card .card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  color: #1D5166;
+  font-weight: 700;
+}
+@media (max-width: 991px) {
+  .about-us-page .journey-section .journey-item .journey-card .card-header {
+    justify-content: center;
+  }
+}
+.about-us-page .journey-section .journey-item .journey-card .card-header svg {
+  width: 20px;
+  height: 20px;
+  color: #F05D2A;
+}
+.about-us-page .journey-section .journey-item .journey-card p {
+  font-size: 15px;
+  color: #606060;
+  line-height: 1.6;
+  margin: 0;
+}
+.about-us-page .journey-section .journey-item .center-point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+@media (max-width: 991px) {
+  .about-us-page .journey-section .journey-item .center-point {
+    position: static;
+    transform: none;
+    margin-block: 1rem;
+    justify-content: center;
+  }
+}
+.about-us-page .journey-section .journey-item .center-point .dot {
+  width: 12px;
+  height: 12px;
+  background: #F05D2A;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(240, 93, 42, 0.1);
+}
+.about-us-page .journey-section .journey-item .center-point .year-pill {
+  background: #fff;
+  border: 1px solid #EFEFEF;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1D5166;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.about-us-page .journey-section .journey-item .robot-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.about-us-page .journey-section .journey-item .robot-box img {
+  width: 100%;
+  max-width: 300px;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+  transition: transform 0.5s ease;
+}
+.about-us-page .journey-section .journey-item .robot-box:hover img {
+  transform: translateY(-10px) rotate(2deg);
+}
+.about-us-page .journey-section .journey-item:nth-child(even) .journey-card {
+  order: 2;
+}
+.about-us-page .journey-section .journey-item:nth-child(even) .robot-box {
+  order: 1;
+}
+.about-us-page .journey-section .journey-item:nth-child(even) .robot-box img {
+  transform: scaleX(-1);
+}
+.about-us-page .journey-section .journey-item:nth-child(even):hover .robot-box img {
+  transform: scaleX(-1) translateY(-10px) rotate(-2deg);
+}/*# sourceMappingURL=about-us.css.map */

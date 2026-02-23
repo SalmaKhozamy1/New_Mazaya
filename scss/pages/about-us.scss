@@ -1,0 +1,240 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.about-us-page {
+    padding-bottom: 5rem;
+
+    .about-content-section {
+        margin-bottom: 5rem;
+        
+        .about-card {
+            padding: 3.5rem;
+            
+            .card-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 4rem;
+                align-items: center;
+
+                @media (max-width: 991px) {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    gap: 2rem;
+                }
+
+                .image-box {
+                    position: relative;
+                    img {
+                        width: 100%;
+                        border-radius: 24px;
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+                    }
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -20px;
+                        left: -20px;
+                        width: 100px;
+                        height: 100px;
+                        background: radial-gradient(circle, $primary-color 10%, transparent 10%);
+                        background-size: 15px 15px;
+                        opacity: 0.2;
+                        z-index: -1;
+                    }
+                }
+
+                .text-box {
+                    .badge-pill {
+                        margin-bottom: 1.5rem;
+                        @media (max-width: 991px) { margin-inline: auto; }
+                    }
+                    
+                    h2 {
+                        font-size: 36px;
+                        font-weight: 700;
+                        color: $secondary-color;
+                        margin-bottom: 1.5rem;
+                        line-height: 1.2;
+                    }
+
+                    p {
+                        font-size: 18px;
+                        color: $desc-color;
+                        line-height: 1.8;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .vision-mission-section {
+        margin-bottom: 5rem;
+        
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+
+            .vm-card {
+                padding: 3rem;
+                @include flex($direction: column, $align: flex-start, $gap: 1.5rem);
+                text-align: start;
+
+                .icon-box {
+                    width: 60px;
+                    height: 60px;
+                    background: rgba($primary-color, 0.05);
+                    border-radius: 16px;
+                    @include flex($justify: center);
+                    color: $primary-color;
+                    svg { width: 30px; height: 30px; }
+                }
+
+                h3 {
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: $font-color;
+                }
+
+                p {
+                    font-size: 16px;
+                    color: $desc-color;
+                    line-height: 1.7;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    // Journey/Timeline Section
+    .journey-section {
+        padding-block: 5rem;
+        position: relative;
+        overflow: hidden;
+
+        .journey-container {
+            position: relative;
+            @include flex($direction: column, $gap: 8rem);
+            
+            // The Curved Dotted Line (Visual SVG or pseudo)
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 100%;
+                max-width: 800px;
+                transform: translateX(-50%);
+                background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1200" viewBox="0 0 800 1200"><path d="M400,0 Q600,150 400,300 T400,600 T400,900 T400,1200" fill="none" stroke="%23F05D2A" stroke-width="2" stroke-dasharray="8,8" opacity="0.3"/></svg>') no-repeat center;
+                background-size: contain;
+                z-index: 1;
+                pointer-events: none;
+                
+                @media (max-width: 991px) {
+                    display: none; // Simplify for mobile
+                }
+            }
+        }
+
+        .journey-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+            position: relative;
+            z-index: 2;
+
+            @media (max-width: 991px) {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .journey-card {
+                padding: 2rem;
+                background: #FFF9F6; // Soft peach/beige background
+                border: 1px solid rgba($primary-color, 0.1);
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+
+                .card-header {
+                    @include flex($justify: flex-start, $gap: 10px);
+                    margin-bottom: 1rem;
+                    color: $secondary-color;
+                    font-weight: 700;
+                    
+                    @media (max-width: 991px) { justify-content: center; }
+
+                    svg { width: 20px; height: 20px; color: $primary-color; }
+                }
+
+                p {
+                    font-size: 15px;
+                    color: $desc-color;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+            }
+
+            .center-point {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                @include flex($gap: 15px);
+                z-index: 10;
+
+                @media (max-width: 991px) {
+                    position: static;
+                    transform: none;
+                    margin-block: 1rem;
+                    justify-content: center;
+                }
+
+                .dot {
+                    width: 12px;
+                    height: 12px;
+                    background: $primary-color;
+                    border-radius: 50%;
+                    box-shadow: 0 0 0 4px rgba($primary-color, 0.1);
+                }
+
+                .year-pill {
+                    background: #fff;
+                    border: 1px solid #EFEFEF;
+                    padding: 4px 12px;
+                    border-radius: 8px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: $secondary-color;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+                }
+            }
+
+            .robot-box {
+                @include flex($justify: center);
+                img {
+                    width: 100%;
+                    max-width: 300px;
+                    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+                    transition: transform 0.5s ease;
+                }
+                &:hover img { transform: translateY(-10px) rotate(2deg); }
+            }
+
+            // Alternating layouts
+            &:nth-child(even) {
+                .journey-card { order: 2; }
+                .robot-box { order: 1; img { transform: scaleX(-1); } } // Flip robot for symmetry
+                &:hover .robot-box img { transform: scaleX(-1) translateY(-10px) rotate(-2deg); }
+            }
+        }
+    }
+}

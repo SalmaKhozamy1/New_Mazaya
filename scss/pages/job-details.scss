@@ -1,0 +1,133 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.job-details-page {
+    padding-bottom: 5rem;
+
+    .job-header-section {
+        margin-bottom: 2.5rem;
+        @include flex($justify: space-between, $align: center);
+        
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .header-content {
+            .job-title {
+                font-size: 32px;
+                font-weight: 600;
+                color: $secondary-color;
+                margin-bottom: 0.5rem;
+            }
+            .post-time {
+                font-size: 16px;
+                color: $desc-color;
+            }
+        }
+
+        .btn-apply {
+            background: $secondary-color;
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: $transition-base;
+            
+            &:hover {
+                background: darken($secondary-color, 5%);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba($secondary-color, 0.2);
+            }
+        }
+    }
+
+    .details-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .custom-card {
+        height: 100%;
+        padding: 2.5rem; // Overriding for more space in job details
+
+        &--full {
+            margin-bottom: 2rem;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: $font-color;
+            margin-bottom: 2rem;
+        }
+
+        .job-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            @include flex($direction: column, $align: flex-start, $gap: 1.5rem);
+
+            li {
+                @include flex($gap: 1rem);
+                font-size: 18px;
+                font-weight: 500;
+                color: $desc-color;
+
+                .icon-box {
+                    width: 32px;
+                    height: 32px;
+                    @include flex($justify: center);
+                    color: $primary-color;
+                    flex-shrink: 0;
+                    
+                    svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+
+        p {
+            font-size: 17px;
+            color: $desc-color;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            @include flex($direction: column, $align: flex-start, $gap: 1rem);
+
+            li {
+                position: relative;
+                padding-inline-start: 1.5rem;
+                font-size: 16px;
+                color: $desc-color;
+                line-height: 1.6;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 10px;
+                    width: 6px;
+                    height: 6px;
+                    background: $desc-color;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}

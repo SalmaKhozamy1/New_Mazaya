@@ -1,0 +1,115 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.carrers-section {
+    padding-bottom: 5rem;
+    
+    .grid-2 {
+        align-items: start;
+        gap: 4rem;
+        
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+}
+
+.jobs-vacancies {
+    @include flex($direction: column, $align: stretch, $gap: 1.5rem, $wrap: nowrap);
+    padding-inline-end: 10px;
+    max-height: 400px;
+    overflow: auto;
+    
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #bbb;
+    }
+
+    .job-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        border: 1px solid #f8f8f8;
+        transition: $transition-base;
+        position: relative;
+        @include flex($direction: column, $align: flex-start, $gap: 1.2rem);
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .job-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: $font-color;
+            margin: 0;
+        }
+
+        .job-desc {
+            font-size: 16px;
+            color: $desc-color;
+            line-height: 1.6;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .job-footer {
+            width: 100%;
+            @include flex($justify: space-between, $align: center);
+            margin-top: 0.5rem;
+
+            @media (max-width: 576px) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+        }
+
+        .job-tags {
+            @include flex($gap: 0.8rem);
+            
+            .tag {
+                padding: 6px 16px;
+                background: rgba($primary-color, 0.05);
+                color: $secondary-color;
+                border-radius: 50px;
+                font-size: 14px;
+                font-weight: 500;
+                border: 1px solid rgba($primary-color, 0.05);
+            }
+        }
+
+        .btn-apply {
+            background: $secondary-color;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: darken($secondary-color, 5%);
+                transform: scale(1.02);
+            }
+        }
+    }
+}
