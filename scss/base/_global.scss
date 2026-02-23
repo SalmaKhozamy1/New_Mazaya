@@ -9,6 +9,7 @@
     font-size: $size-sm;
     border: 0px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-secondary {
@@ -21,7 +22,12 @@
     font-weight: 500;
     color: $desc-color;
 }
-
+section {
+    margin-top: 2vw;
+    padding-block: 2rem;
+    padding-inline: $main-inline-padding;
+    position: relative;
+}
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));

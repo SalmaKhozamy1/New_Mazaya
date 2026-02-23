@@ -14,12 +14,6 @@ p {
   margin: 0;
 }
 
-section {
-  margin-top: 2vw;
-  padding-inline: 8vw;
-  position: relative;
-}
-
 /* Inter Font */
 @font-face {
   font-family: "Rethink_Sans";
@@ -69,6 +63,7 @@ section {
   font-size: 16px;
   border: 0px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn-secondary {
@@ -80,6 +75,13 @@ section {
   font-size: 16px;
   font-weight: 500;
   color: #606060;
+}
+
+section {
+  margin-top: 2vw;
+  padding-block: 2rem;
+  padding-inline: 10vw;
+  position: relative;
 }
 
 .grid-2 {
@@ -102,11 +104,12 @@ section {
   }
 }
 .navbar {
-  padding: 20px 8vw;
+  padding: 20px 10vw;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  position: absolute;
 }
 .navbar .navbar-toggler {
   border: none;
@@ -143,15 +146,15 @@ section {
 .navbar .menu-header {
   position: absolute;
   top: 30px;
-  left: 8vw;
-  right: 8vw;
+  left: 10vw;
+  right: 10vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 5px;
   flex-wrap: wrap;
-  width: calc(100% - 2 * 8vw);
+  width: calc(100% - 2 * 10vw);
 }
 .navbar .menu-header .btn-close-custom {
   background: none;
@@ -202,7 +205,7 @@ section {
 .navbar .language-switcher {
   position: absolute;
   bottom: 40px;
-  right: 8vw;
+  right: 10vw;
   background-color: #f8f9fa;
   border-radius: 20px;
   padding: 4px;
@@ -261,6 +264,7 @@ section {
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: 120px;
 }
 .hero .main-text .badge-pill {
   color: #1D5166;
@@ -783,8 +787,17 @@ section {
   background: linear-gradient(90deg, #F05D2A 0%, rgba(240, 93, 42, 0.6) 30%, rgba(240, 93, 42, 0.2) 70%, rgba(240, 93, 42, 0) 100%);
 }
 @media (max-width: 991px) {
-  .smart-systems-section .system-item::after {
+  .smart-systems-section .system-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
     background: linear-gradient(90deg, #F05D2A 0%, rgba(240, 93, 42, 0.6) 30%, rgba(240, 93, 42, 0.2) 70%, rgba(240, 93, 42, 0.6) 100%);
+  }
+  .smart-systems-section .system-item:last-child::after {
+    content: none;
   }
 }
 .smart-systems-section .system-item .item-header {
@@ -842,15 +855,167 @@ section {
 .smart-systems-section .grid-2 > :nth-last-child(-n+2) {
   border-bottom: none;
 }
-@media (max-width: 991px) {
-  .smart-systems-section .system-item {
-    border: none;
-    border-bottom: 1px solid rgba(240, 93, 42, 0.05);
-    padding: 2rem;
+
+.main_video_section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+.grid_img {
+  max-height: 550px;
+}
+
+.main_sevices_managment .grid_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.main_sevices_managment .main-text {
+  text-align: start;
+  align-items: start;
+}
+.main_sevices_managment .main-text .main_title {
+  font-size: 36px;
+  font-weight: 700;
+}
+.main_sevices_managment .main-text .description {
+  font-size: 14px;
+}
+
+.products {
+  padding: 100px 0;
+}
+.products .custom-card {
+  background: #fff;
+  border-radius: 40px;
+  padding: 80px 60px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: visible;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  position: relative;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .products-grid {
+    grid-template-columns: 1fr 1.2fr 1fr;
+    grid-template-areas: "item1 . item2" "item3 robot item4" "item5 robot item6";
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 100px;
   }
-  .smart-systems-section .system-item:last-child {
+}
+.products-grid__center {
+  grid-area: robot;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+@media (max-width: 991px) {
+  .products-grid__center {
+    display: none;
+  }
+}
+.products-grid__robot {
+  width: 150%;
+  max-width: none;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
+  pointer-events: none;
+  transform: translateY(-8%);
+}
+.products-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+.products-grid__item--1 {
+  grid-area: item1;
+}
+.products-grid__item--2 {
+  grid-area: item2;
+}
+.products-grid__item--3 {
+  grid-area: item3;
+}
+.products-grid__item--4 {
+  grid-area: item4;
+}
+.products-grid__item--5 {
+  grid-area: item5;
+}
+.products-grid__item--6 {
+  grid-area: item6;
+}
+@media (max-width: 991px) {
+  .products-grid__item {
+    padding: 30px 0;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .products-grid__item:last-child {
     border-bottom: none;
   }
+}
+.products-grid__icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+.products-grid__icon img {
+  width: 35px;
+  height: 35px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.products-grid__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+.products-grid__content {
+  max-width: 340px;
+  margin: 0 auto;
+}
+.products-grid__desc {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  font-weight: 400;
+}
+
+.primary-color {
+  color: #F05D2A;
+}
+
+.secondary-color {
+  color: #1D5166;
 }
 
 .w-img {
@@ -861,6 +1026,13 @@ section {
 .h-img {
   height: 100%;
   width: auto;
+}
+
+.full-width {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .main-text, .secondary-main-text {
@@ -1616,19 +1788,11 @@ footer .footer-catergory div {
 }
 
 .btn-primary {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 6px;
-  flex-wrap: wrap;
   background: #F05D2A;
   color: #fff;
-  border: none;
-  padding: 0.7rem 1.4rem;
-  border-radius: 12px;
-  font-weight: 400;
-  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #1D5166;
 }
 
 .text-white {

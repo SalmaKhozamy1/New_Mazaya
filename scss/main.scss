@@ -17,7 +17,16 @@
 
 // pages
 @use 'pages/home';
+@use 'pages/services';
 // @use 'pages/about';
+
+// colors
+.primary-color {
+    color: $primary-color;
+}
+.secondary-color {
+    color: $secondary-color;
+}
 
 // main classes
 .w-img {
@@ -28,6 +37,12 @@
     height: 100%;
     width: auto;
 }
+.full-width {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
 .main-text, .secondary-main-text {
     max-width: 1000px;
     @include flex($direction: column, $justify: center, $gap: 1.1rem);
@@ -137,6 +152,7 @@
         font-size: $size-sm;
     }
 }
+
 // .section-title, footer .footer_title, .main-text .main_title, .secondary-main-text .hero_title {
 //     font-size: 40px;
 //     font-weight: 600;
@@ -311,8 +327,11 @@ footer {
 
 // Utilities
 .btn-primary {
-    @include flex($justify: center, $gap: 6px);
-    background: $primary-color; color: #fff; border: none; padding: 0.7rem 1.4rem; border-radius: 12px; font-weight: 400; transition: $transition-base;
+    background: $primary-color; 
+    color: #fff; 
+    &:hover  {
+        background: $secondary-color;
+    }
 }
 
 .text-white { color: #fff !important; }

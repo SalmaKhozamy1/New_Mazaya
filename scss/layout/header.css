@@ -1,9 +1,10 @@
 .navbar {
-  padding: 20px 8vw;
+  padding: 20px 10vw;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
+  position: absolute;
 }
 .navbar .navbar-toggler {
   border: none;
@@ -40,15 +41,15 @@
 .navbar .menu-header {
   position: absolute;
   top: 30px;
-  left: 8vw;
-  right: 8vw;
+  left: 10vw;
+  right: 10vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 5px;
   flex-wrap: wrap;
-  width: calc(100% - 2 * 8vw);
+  width: calc(100% - 2 * 10vw);
 }
 .navbar .menu-header .btn-close-custom {
   background: none;
@@ -99,7 +100,7 @@
 .navbar .language-switcher {
   position: absolute;
   bottom: 40px;
-  right: 8vw;
+  right: 10vw;
   background-color: #f8f9fa;
   border-radius: 20px;
   padding: 4px;

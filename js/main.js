@@ -32,7 +32,29 @@ document.addEventListener("DOMContentLoaded", () => {
     if (index === 0) {
       item.classList.add("active");
       const content = item.querySelector(".faq-content");
-      content.style.maxHeight = content.scrollHeight + "px";
+      if (content) content.style.maxHeight = content.scrollHeight + "px";
     }
+  });
+
+  // Products Grid Accordion (Mobile)
+  const productItems = document.querySelectorAll(".products-grid__item");
+
+  productItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      const isMobile = window.innerWidth <= 991;
+      if (!isMobile) return;
+
+      const isActive = item.classList.contains("active");
+
+      // Close other items
+      productItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove("active");
+        }
+      });
+
+      // Toggle current
+      item.classList.toggle("active");
+    });
   });
 });

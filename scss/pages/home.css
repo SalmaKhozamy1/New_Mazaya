@@ -5,6 +5,7 @@
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: 120px;
 }
 .hero .main-text .badge-pill {
   color: #1D5166;

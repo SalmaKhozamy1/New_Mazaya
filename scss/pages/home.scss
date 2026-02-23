@@ -5,7 +5,7 @@
 // Hero
 .hero {
     @include flex($gap: 0.5rem);
-
+    margin-top: 120px;
     .main-text {
         .badge-pill {
             color: $secondary-color;
