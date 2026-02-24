@@ -22,11 +22,13 @@
   content: "";
   position: absolute;
   top: 15px;
-  left: 0;
+  left: 50%;
+  width: 88%;
   right: 0;
   height: 2px;
   background: #EFEFEF;
   z-index: 1;
+  transform: translate(-50%, 0%);
 }
 .job-apply-page .stepper-container .stepper .step {
   position: relative;

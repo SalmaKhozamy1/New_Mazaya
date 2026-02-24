@@ -1,8 +1,13 @@
 @use '../abstracts/variables' as *;
+@use '../base/typography' as *;
 
 //////////// Global Base Style //////////////
+*, *::before, *::after {
+    font-family: inherit;
+}
+
 body {
-    font-family: $font-primary;
+    font-family: $font-family;
     position: relative;
     color: $font-color;
     margin: 0;
@@ -12,14 +17,8 @@ body {
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
-.custom-ul {
-    padding: 0px;
-    margin: 0px;
-    list-style: none;
-}
 // Wrapper & Main text
 .site-wrapper {
-    // @include flex($direction: column, $align: stretch);
     min-height: 100vh;
 }  
 main {
@@ -30,3 +29,22 @@ section {
     position: relative;
     padding-block: 2rem;
 }
+.form-control:focus {
+    box-shadow: none;
+    border: 0px;
+}
+    // Custom scrollbar
+    *::-webkit-scrollbar {
+        width: 6px;
+    }
+    *::-webkit-scrollbar-track {
+        background: #ccc;
+        border-radius: 10px;
+    }
+    *::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: 10px;
+    }
+    *::-webkit-scrollbar-thumb:hover {
+        background: #ccc;
+    }

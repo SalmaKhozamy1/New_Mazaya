@@ -3,30 +3,8 @@
 
 .job-details-page {
     padding-bottom: 5rem;
-
     .job-header-section {
-        margin-bottom: 2.5rem;
         @include flex($justify: space-between, $align: center);
-        
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
-        }
-
-        .header-content {
-            .job-title {
-                font-size: 32px;
-                font-weight: 600;
-                color: $secondary-color;
-                margin-bottom: 0.5rem;
-            }
-            .post-time {
-                font-size: 16px;
-                color: $desc-color;
-            }
-        }
-
         .btn-apply {
             background: $secondary-color;
             color: #fff;
@@ -43,7 +21,6 @@
             }
         }
     }
-
     .details-grid {
         display: grid;
         grid-template-columns: 350px 1fr;
@@ -54,61 +31,42 @@
             grid-template-columns: 1fr;
         }
     }
-
     .custom-card {
-        height: 100%;
-        padding: 2.5rem; // Overriding for more space in job details
-
-        &--full {
-            margin-bottom: 2rem;
-        }
-
+        margin-bottom: 1.6rem;
+        align-items: start;
+        padding: 24px;
         .card-title {
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 500;
             color: $font-color;
-            margin-bottom: 2rem;
+            margin-bottom: .3rem;
         }
 
         .job-info-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            @include flex($direction: column, $align: flex-start, $gap: 1.5rem);
+            @include flex($direction: column, $align: flex-start, $gap: .5rem);
 
             li {
                 @include flex($gap: 1rem);
-                font-size: 18px;
-                font-weight: 500;
+                font-size: $size-md;
+                font-weight: 400;
                 color: $desc-color;
-
-                .icon-box {
-                    width: 32px;
-                    height: 32px;
-                    @include flex($justify: center);
-                    color: $primary-color;
-                    flex-shrink: 0;
-                    
+                .icon-box {                  
                     svg {
-                        width: 24px;
-                        height: 24px;
+                        width: 20px;
+                        height: 20px;
                     }
                 }
             }
-        }
-
-        p {
-            font-size: 17px;
-            color: $desc-color;
-            line-height: 1.8;
-            margin: 0;
         }
 
         .bullet-list {
             list-style: none;
             padding: 0;
             margin: 0;
-            @include flex($direction: column, $align: flex-start, $gap: 1rem);
+            @include flex($direction: column, $align: flex-start, $gap: .1rem);
 
             li {
                 position: relative;

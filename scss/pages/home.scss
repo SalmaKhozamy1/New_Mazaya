@@ -5,7 +5,7 @@
 // Hero
 .hero {
     @include flex($gap: 0.5rem);
-    padding-top: 120px;
+    padding-block: 120px 0px;
     .main-text {
         .badge-pill {
             color: $secondary-color;
@@ -31,16 +31,41 @@
     }
 
     .hero-visuals {
-        border: 2px solid red;
         position: relative;
         width: 100%;
-        min-height: 600px;
+        min-height: 500px;
         .robot-img {
-            border: 2px solid green;
             position: relative;
             z-index: 5;
             height: 100%;
             @include flex($justify: center, $align: flex-end);
+            img {
+                width: 120%;
+            }
+        }
+        .heros_card {
+            position: relative;
+            &::after {
+                content: " ";
+                background-color: $light-gray-color;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 86%;
+                height: 100%;
+                z-index: -1;
+                border-radius: 16px;
+            }
+        }
+        .heros_card:has(.performance-card) {
+            &::after {
+                top: 49%;
+                left: 57%;
+                transform: translate(-50%, -50%) rotate(18deg);
+                width: 71%;
+                height: 97%;
+            }
         }
         .card-float {
             background: #fff;
@@ -49,28 +74,27 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(0, 0, 0, 0.03);
             z-index: 6;
-            text-align: left;
+            text-align: left;  
+            animation: floatLeft 6s ease-in-out infinite;
             transition: $transition-smooth;
-            &:hover {
-                // transform: translateY(-10px) rotate(0deg) !important;
-                // z-index: 10;
+            .card_btn {
+                @include flex($justify: center);
+                background: $light-primary-color;
+                color: $primary-color;
+                font-size: 12px;
+                font-weight: 600;
+                padding: 8px;
+                border-radius: 8px;
+                text-decoration: none;
+                white-space: nowrap;
+                width: 100%;
+                margin-top: 1rem;
+                text-align: center;
             }
-            // &::after {
-            //     content: " ";
-            //     background-color: red;
-            //     position: absolute;
-            //     top: 0%;
-            //     left: 0%;
-            //     width: 120%;
-            //     height: 120%;
-            //     z-index: -1;
-            //     border-radius: 16px;
-            // }
             &.health-card {
                 min-width: fit-content;
-                width: 85%;
+                width: 80%;
                 transform: rotate(-7deg);
-                // animation: floatLeft 6s ease-in-out infinite;
                 .card-header {
                     @include flex($gap: 6px);
                     margin-bottom: 1rem;
@@ -96,27 +120,15 @@
                             &.active { background: #12B76A; }
                         }
                     }
-                    .view-details-btn {
-                        @include flex;
-                        background: $light-primary-color;
-                        color: $primary-color;
-                        font-size: 12px;
-                        font-weight: 600;
-                        padding: 8px;
-                        border-radius: 8px;
-                        text-decoration: none;
-                        width: 100%;
-                        margin-top: 1rem;
-                        text-align: center;
-                    }
+          
                 }
             }
 
             &.performance-card {
-                transform: rotate(2deg);
-                animation: floatRight 6s ease-in-out infinite 1s;
+                transform: rotate(9deg);
+                min-width: 65%;
                 .card-header-top {
-                    margin-bottom: 1.5rem;
+                    margin-bottom: .5rem;
                     .score-line {
                         @include flex($justify: space-between);
                         margin-top: 8px;
@@ -133,7 +145,7 @@
                 }
                 .legend {
                     @include flex($gap: 12px);
-                    margin-bottom: 1.5rem;
+                    margin-bottom: .5rem;
                     .legend-item {
                         font-size: 10px; font-weight: 600; color: $desc-color;
                         @include flex($gap: 4px);
@@ -144,7 +156,7 @@
                     }
                 }
                 .module-status {
-                    border-top: 1px solid #f0f0f0; padding-top: 1rem;
+                    border-top: 1px solid #f0f0f0; padding-top: .5rem;
                     .section-label { font-weight: 600; margin-bottom: 8px; }
                     .status-row {
                         @include flex($justify: space-between);
@@ -152,46 +164,75 @@
                         span:last-child { font-weight: 700; color: $secondary-color; }
                     }
                 }
-                .view-report-btn {
-                    @include flex;
-                    background: #FFF4F0;
-                    color: $primary-color;
-                    font-size: 12px;
-                    font-weight: 600;
-                    padding: 8px;
-                    border-radius: 8px;
-                    text-decoration: none;
-                    width: 100%;
-                    margin-top: 1rem;
-                }
             }
         }
 
         .float-icon {
-            position: absolute; width: 40px; height: 40px; background: #fff; border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            @include flex($justify: center);
-            z-index: 4;
-            animation: floatUpDown 4s ease-in-out infinite;
-            &.icon-gem { top: 40%; left: 5%; animation-delay: 0.5s; }
-            &.icon-trend { top: 25%; right: 25%; animation-delay: 1.5s; }
-            &.icon-thumb { bottom: 20%; left: 10%; animation-delay: 2.5s; }
-            &.icon-stats { bottom: 15%; right: 25%; animation-delay: 1s; }
+            position: absolute; 
+            animation: floatUpDown 2s ease-in-out infinite;
+            animation-delay: 0.5s;
+            transform: translate(-50%,-50%);
+            &.icon-gem { top: 17%; left: 23%; }
+            &.icon-trend { top: 10%; right: 4%;}
+            &.icon-thumb { bottom: -4%; left: 8%;}
+            &.icon-stats { bottom: -10%; right: 11%;}
         }
 
         .talk-badge-circular {
-            position: absolute; bottom: 5rem; right: 5vw; width: 150px; height: 150px; z-index: 20;
+            position: absolute;
+            bottom: -10px;
+            right: -5.5vw;
+            width: 150px;
+            height: 150px;
+            z-index: 20;
+
             .badge-inner {
-                position: relative; width: 100%; height: 100%; @include flex($justify: center);
-                .circular-text { width: 100%; height: 100%; animation: rotate 15s linear infinite; }
+                position: relative; 
+                width: 100%; 
+                height: 100%; 
+                @include flex($justify: center);
+                border-radius: 50%;
+                background-color: rgba($primary-color, 0.05);
+                .circular-text { 
+                    width: 100%; 
+                    height: 100%; 
+                    animation: rotate 15s linear infinite; 
+                }
                 .center-icon {
-                    position: absolute; width: 70px; height: 70px; background: #fff; border-radius: 50%;
-                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); @include flex($justify: center); overflow: hidden;
+                    position: absolute; 
+                    width: 70px; 
+                    height: 70px; 
+                    background: #fff; 
+                    border-radius: 50%;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+                    @include flex($justify: center); 
+                    overflow: hidden;
                     img { width: 100%; height: 100%; object-fit: cover; }
                 }
             }
         }
+        @media screen and (max-width: $media-sm) {
+            padding-bottom: 7rem;
+            .robot-img {
+                height: 420px !important;
+                margin-bottom: 40px;
+                img {
+                    height: 100%;
+                    width: auto;
+                }
+            }
+        }
+        @media screen and (max-width: $media-md) {
+            .robot-img {
+                bottom: 0;
+                height: 100%;
+            }
+        }
+        @media screen and (max-width: $media-lg) and (min-width: $media-sm) {
+            grid-template-columns: 1fr 1.4fr 1fr;
+        }
     }
+
 }
 // Clarity
 .clarity-section {
@@ -652,4 +693,26 @@
         .stats-divider { height: 1px; background: $gray-color; margin-block: 0.5rem; }
         .stats-row { @include flex($justify: space-around); .stat-item { @include flex($direction: column, $gap: 4px); .stat-number { font-size: 32px; font-weight: 700; margin-bottom: 1rem; color: $primary-color; } .stat-label { font-size: 14px; color: $desc-color; } } }
     }
+}
+
+//////////// Animation ////////////
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(-35%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(-35%);
+  }
 }

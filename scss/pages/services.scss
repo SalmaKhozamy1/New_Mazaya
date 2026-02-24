@@ -9,7 +9,10 @@
     border: var(--stroke-weight-1, 1px) solid rgba(0, 0, 0, 0.10);
     background: rgba(255, 255, 255, 0.20);
     text-align: center;
-    @include flex($direction: column, $justify: center, $align: center, $wrap:nowrap, $gap: 1rem);
+    @include flex($direction: column, $justify: center, $align: center, $wrap:nowrap, $gap: .5rem);
+    &:hover {
+        transform: translateY(-5px);
+    }
     .card-icon {
       height: 27px; width: 27px;
     }

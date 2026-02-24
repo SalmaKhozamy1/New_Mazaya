@@ -6,19 +6,24 @@
     
     .grid-2 {
         align-items: start;
-        gap: 4rem;
+        gap: 2rem 0rem;
         
-        @media (max-width: 991px) {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
+    .small_main_text {
+        padding-inline-end: 2rem;
+    }
+    .email {
+        color: $primary-color;
+        font-size: $size-xs;
+        font-weight: 400;
+        @include flex($justify: flex-start,$wrap:nowrap,$gap: .5rem);
+    }
     }
 }
 
 .jobs-vacancies {
     @include flex($direction: column, $align: stretch, $gap: 1.5rem, $wrap: nowrap);
-    padding-inline-end: 10px;
-    max-height: 400px;
+    padding: 2rem 3rem;
+    max-height: 425px;
     overflow: auto;
     
     // Custom scrollbar
@@ -38,31 +43,18 @@
     }
 
     .job-card {
-        background: #fff;
-        border-radius: 24px;
-        padding: 2rem;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
-        border: 1px solid #f8f8f8;
-        transition: $transition-base;
-        position: relative;
-        @include flex($direction: column, $align: flex-start, $gap: 1.2rem);
-
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
-        }
+        align-items: start;
+        border-radius: 16px;
+        box-shadow: 0 16px 80px rgba(80, 45, 22, 0.08);
 
         .job-title {
             font-size: 24px;
-            font-weight: 600;
-            color: $font-color;
-            margin: 0;
+            font-weight: 500;
         }
-
         .job-desc {
             font-size: 16px;
             color: $desc-color;
-            line-height: 1.6;
+            font-weight: 400;
             margin: 0;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -73,18 +65,12 @@
 
         .job-footer {
             width: 100%;
-            @include flex($justify: space-between, $align: center);
+            @include flex($justify: space-between, $align: center, $gap:.6rem 6px);
             margin-top: 0.5rem;
-
-            @media (max-width: 576px) {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1.5rem;
-            }
         }
 
         .job-tags {
-            @include flex($gap: 0.8rem);
+            @include flex($gap: 0.4rem);
             
             .tag {
                 padding: 6px 16px;

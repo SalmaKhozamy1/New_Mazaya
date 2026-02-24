@@ -5,7 +5,6 @@
 // base
 @use 'base/reset';
 @use 'base/typography';
-// @use 'base/global';
 
 // layout
 @use 'layout/header';
@@ -73,6 +72,14 @@
    height: 100%;
    object-fit: cover;
 }
+.custom-ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+.custom-link {
+    text-decoration: none;
+}
 .custom-card {
     padding: 12px;
     border-radius: 24px;
@@ -110,8 +117,8 @@
 .main_sevices_managment {
     align-items: end;
    .grid_img {
-     @include flex($justify: center);  
-     max-height: 550px;
+     @include flex($justify: center, $wrap: nowrap);  
+     height: clamp(400px, 75vh, 550px);
    }
    .badge-pill {
     background: rgba($primary-color, 0.05) !important;
@@ -121,10 +128,9 @@
 //////////// Grid System ///////////
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
     gap: 1rem;
 }
-
 .grid-3 {
     display: grid;
     gap: 10px;
@@ -198,44 +204,48 @@
     }
 }
 .small_main_text {
+    @extend %text-block-base;
     margin: 0;
     text-align: start;
     @include flex($direction: column, $gap: 1rem, $wrap: nowrap,$align: start);
         .badge-pill {
-            @include badge-pill;
+            background-color: rgba($primary-color, 0.03);
             font-size: $size-xs;
+            color: $secondary-color;
         }
         .main_title {
-            color: $secondary-color;
             font-size: 36px;
-            font-weight: 700;
         }
         .description {
             font-size: $size-xs;
-            color: $desc-color;
             font-weight: 500;
         }
 }
 .main_page_header {
     position: relative;
+    min-height: 260px;
+    &:has(video) {
     video {
         max-height: 100vh;
     }
     .main-text {
-        padding-top: 120px;
-        padding-inline: $main-inline-padding;
-        text-align: start;
-        margin: 0;
-        align-items: start;
         position: absolute;
         inset-inline-start: 0;
         inset-block-end: 10%;
+        padding-inline: $main-inline-padding;
+    }
+    }
+    .main-text {
+        padding-top: 120px;
+        text-align: start;
+        margin: 0;
+        align-items: start;    
     }
     .main_title {
         font-size: clamp(20px, 3vw, 32px);
     }
     .subtitle-orange {
-        font-size: clamp(24px, 5vw, 40px);
+        font-size: clamp(24px, 5vw, 46px);
         margin-top: 5px;
     }
 }
@@ -279,7 +289,6 @@
     // padding-block: 4rem; 
     position: relative; 
 }
-
 // FAQ
 .faq-section {
     margin-block: 5rem 3rem;
@@ -336,7 +345,64 @@
         }
     }
 }
+/////////////// BreadCrumb /////////////////
+.breadcrumb_section {
+    padding-inline: $main-inline-padding;
+     --bs-breadcrumb-divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M5.46328 3.60486C5.68162 3.3084 6.09895 3.24507 6.39541 3.46341C6.62569 3.63301 6.84458 3.80264 7.03522 3.95142C7.4158 4.24843 7.92549 4.65731 8.43713 5.10155C8.94546 5.54291 9.47096 6.03226 9.87463 6.48912C10.0758 6.71679 10.2608 6.95209 10.3991 7.18154C10.5264 7.39268 10.6667 7.68281 10.6667 8.00023C10.6667 8.31765 10.5264 8.6078 10.3991 8.81895C10.2608 9.0484 10.0758 9.2837 9.87463 9.51137C9.47096 9.96822 8.94546 10.4576 8.43713 10.8989C7.92549 11.3432 7.4158 11.7521 7.03522 12.0491C6.84458 12.1978 6.62569 12.3675 6.39541 12.5371C6.09895 12.7554 5.68162 12.6921 5.46328 12.3956C5.37551 12.2765 5.33326 12.1377 5.33337 12.0003L5.33337 4.00021C5.33326 3.86274 5.37551 3.72403 5.46328 3.60486Z' fill='%23F05D2A'/%3E%3C/svg%3E");
+     --bs-breadcrumb-divider-size: 30px;
+     .breadcrumb-item , .breadcrumb-item a {
+        @include flex($justify: flex-start, $gap: 6px, $wrap:nowrap);
+        font-size: $size-sm;
+        font-weight: 500;
+        color: $secondary-color;
+    }
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    top: 2px;
+    position: relative;
+    padding: 0px;
+}
+/////////////// Form Style /////////////////
+.custom-label {
+    display: block;
+    color: $desc-color;
+    font-size: $size-sm;
+    font-weight: 500;
+    margin-bottom: 0.4rem; 
+}
+.custom-form {
+    .form-label {
+       @extend .custom-label;
+    }
 
+    .form-control-custom {
+        width: 100%;
+        background-color: $light-gray-color;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: .8rem .8rem;
+        font-size: 16px;
+        color: $font-color;
+        outline: none;
+        transition: $transition-base;
+
+        &::placeholder {
+            color: #A0A0A0;
+            font-size: $size-xs;
+            font-weight: 400;
+        }
+
+        &:focus {
+            background-color: #f2f2f2;
+            box-shadow: 0 0 0 1px rgba($secondary-color, 0.5);
+        }
+    }
+
+    textarea.form-control-custom {
+        resize: none;
+        height: auto;
+    }
+}
 /////////////// Media Query ////////////////
 @media screen and (max-width: $media-md) {
     .grid-2 { 
@@ -358,30 +424,6 @@
         grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
     }
 }
-
-// .section-title, footer .footer_title, .main-text .main_title, .secondary-main-text .hero_title {
-//     font-size: 40px;
-//     font-weight: 600;
-//     color: $secondary-color;
-// }
-
-// .badge-pill-section, .main-text .badge-pill, .secondary-main-text .badge-pill {
-//     @include flex($gap: 6px);
-//     padding: 4px 12px;
-//     background: $light-primary-color;
-//     color: $primary-color;
-//     font-size: 16px;
-//     font-weight: 500;
-//     border-radius: 50px;
-//     margin-bottom: 0.3rem;
-//     border: 1px solid rgba($primary-color, 0.1);
-// }
-
-// .section-desc, footer .footer_desc, .main-text .main_desc, .secondary-main-text .hero_desc {
-//     font-size: 16px;
-//     font-weight: 500;
-//     color: $desc-color;
-// }
 
 
 
