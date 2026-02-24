@@ -1,4 +1,7 @@
-// Flexbox helper
+
+@use 'variables' as *;
+
+// Flexbox Mixin
 @mixin flex($justify: flex-start, $align: center, $direction: row, $gap: 5px, $wrap: wrap) {
     display: flex;
     justify-content: $justify;
@@ -6,6 +9,26 @@
     flex-direction: $direction;
     gap: $gap;
     flex-wrap: $wrap;
+}
+// Button Variant Mixin
+@mixin button-variant($bg-color, $text-color: #fff, $hover-bg: null, $hover-opacity: 1) {
+    background-color: $bg-color;
+    color: $text-color;
+    transition: $transition-base;
+    
+    &:hover {
+        @if $hover-bg {
+            background-color: $hover-bg;
+        } @else if $hover-opacity != 1 {
+            opacity: $hover-opacity;
+        } @else {
+            opacity: 0.8;
+        }
+    }
+
+    // &:active {
+    //     transform: scale(0.98);
+    // }
 }
 
 // Media Queries Breakpoints
@@ -18,10 +41,38 @@ $breakpoints: (
     'xxl': 1400px
 );
 
-
-
 // Reusable card hover state
 @mixin card-hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
+
+// Badge Pill Mixin
+@mixin badge-pill($bg: $light-primary-color, $color: $primary-color) {
+    @include flex($gap: 6px);
+    padding: 4px 16px;
+    background: $bg;
+    color: $color;
+    font-size: $size-sm;
+    font-weight: 500;
+    border-radius: 50px;
+    border: 1px solid rgba($color, 0.1);
+    width: fit-content;
+}
+%content-card-block {
+    align-items: start;
+    .card-header {
+        @include flex($direction: column, $gap: .8rem, $align: start);
+        padding: 20px 20px 10px 20px;
+    }
+    .solution-pill {
+        color: $primary-color;
+        border: 1px solid rgba($primary-color, 0.16);
+        background-color: $light-primary-color;
+        &:hover {
+            transition: $transition-base;
+            transform: translateX(-2px);
+        }
+    }
+}
+      

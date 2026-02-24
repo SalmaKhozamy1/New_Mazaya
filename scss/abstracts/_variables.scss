@@ -20,7 +20,6 @@ $size-lg: 24px;
 $size-xl: 40px;
 $size-xxl: 48px;
 
-
 // Media Query
 $media-xs: 576px;
 $media-sm: 768px;
@@ -28,8 +27,13 @@ $media-md: 991px;
 $media-lg: 1200px;
 $media-xl: 1400px;
 
+// Spacing
+$spacing-sm: .8rem;
+$spacing-md: 2rem;
+$spacing-lg: 4rem;
+
 ///////////// Spacing & Layout //////////////
-$main-inline-padding: 10vw;
+$main-inline-padding: clamp(1rem, 8vw, 8rem);
 
 ///////////// Shadows //////////////
 // Specific shadows from original code
@@ -41,3 +45,4 @@ $shadow-float-icon: 0 10px 30px rgba(0, 0, 0, 0.06);
 $transition-base: all 0.3s ease;
 $transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 $transition-bounce: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+

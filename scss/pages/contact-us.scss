@@ -1,0 +1,90 @@
+// abstracts
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.contact-info {
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    gap: clamp(15px, 2vw, 2rem) !important;
+    column-gap: 20px;
+}
+
+.contact-form-card {
+    background: $white;
+    text-align: start;
+    box-shadow: 0 16px 80px -10px rgba(80, 45, 22, 0.16);
+
+    .form-title {
+        color: $secondary-color;
+        font-size: $size-sm;
+        font-weight: 600;
+        margin-bottom: 1.3rem;
+        
+    }
+
+}
+
+.contact-map {
+  justify-content: space-between !important;
+
+  .branch-tabs {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: .4rem;
+    
+    .branch-tab {
+      padding: 8px 5px;
+      border-radius: 8px;
+      font-size: $size-xs;
+      min-width: max-content;
+      font-weight: 500;
+      border: 1px solid #EFEFEF;
+      background: $white;
+      color: $secondary-color;
+      cursor: pointer;
+      transition: $transition-base;
+
+      &.active {
+        background: $light-primary-color;
+        color: $primary-color;
+        border-color: transparent;
+      }
+
+      &:hover:not(.active) {
+        border-color: rgba($primary-color, 0.2);
+        background: $light-gray-color;
+      }
+    }
+  }
+
+  .branch-content {
+    background: $light-gray-color;
+    border-radius: 16px;
+    padding: 1.5rem;
+    width: 100%;
+    @include flex($direction: column, $align: stretch, $gap: 1.2rem);
+
+    .info-group {
+      @include flex($direction: column, $align: flex-start, $gap: 0.2rem);
+
+      .info-label {
+        color: $desc-color;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .info-value {
+        font-size: $size-sm;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+
+    .map-preview {
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+
+    }
+  }
+}

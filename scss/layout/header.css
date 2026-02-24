@@ -1,5 +1,5 @@
 .navbar {
-  padding: 20px 10vw;
+  padding: 20px clamp(1rem, 8vw, 8rem);
   top: 0;
   left: 0;
   width: 100%;
@@ -9,9 +9,13 @@
 .navbar .navbar-toggler {
   border: none;
   padding: 0;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .navbar .navbar-toggler:focus {
   box-shadow: none;
+}
+.navbar .navbar-toggler:hover {
+  transform: scale(1.1);
 }
 .navbar .navbar-collapse {
   position: fixed;
@@ -19,7 +23,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
   z-index: 1050;
   display: flex;
   justify-content: center;
@@ -30,26 +35,81 @@
   padding: 40px;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.4s;
   overflow-y: auto;
+}
+.navbar .navbar-collapse.collapsing {
+  display: flex !important;
+  height: 100vh !important;
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .navbar .navbar-collapse.show {
   opacity: 1;
   visibility: visible;
   display: flex;
+  transform: translateY(0);
+}
+.navbar .navbar-collapse.show .nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(1) {
+  transition-delay: 0.18s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(2) {
+  transition-delay: 0.26s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(3) {
+  transition-delay: 0.34s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(4) {
+  transition-delay: 0.42s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(6) {
+  transition-delay: 0.58s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(7) {
+  transition-delay: 0.66s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(8) {
+  transition-delay: 0.74s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(9) {
+  transition-delay: 0.82s;
+}
+.navbar .navbar-collapse.show .nav-item:nth-child(10) {
+  transition-delay: 0.9s;
+}
+.navbar .navbar-collapse.show .menu-header, .navbar .navbar-collapse.show .language-switcher {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease 0.2s;
+}
+.navbar .navbar-collapse .nav-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.navbar .navbar-collapse .menu-header, .navbar .navbar-collapse .language-switcher {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 .navbar .menu-header {
   position: absolute;
   top: 30px;
-  left: 10vw;
-  right: 10vw;
+  left: clamp(1rem, 8vw, 8rem);
+  right: clamp(1rem, 8vw, 8rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   gap: 5px;
   flex-wrap: wrap;
-  width: calc(100% - 2 * 10vw);
+  width: calc(100% - 2 * clamp(1rem, 8vw, 8rem));
 }
 .navbar .menu-header .btn-close-custom {
   background: none;
@@ -100,7 +160,7 @@
 .navbar .language-switcher {
   position: absolute;
   bottom: 40px;
-  right: 10vw;
+  right: clamp(1rem, 8vw, 8rem);
   background-color: #f8f9fa;
   border-radius: 20px;
   padding: 4px;

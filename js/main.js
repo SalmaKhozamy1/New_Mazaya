@@ -1,60 +1,74 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const faqItems = document.querySelectorAll(".faq-item");
+    // --- Counter Animation ---
+    const startCounter = (el) => {
+        const target = parseFloat(el.getAttribute("data-target"));
+        const prefix = el.getAttribute("data-prefix") || "";
+        const suffix = el.getAttribute("data-suffix") || "";
+        const duration = 2000; // 2 seconds
+        let startTimestamp = null;
 
-  faqItems.forEach((item, index) => {
-    const header = item.querySelector(".faq-header");
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const currentCount = progress * target;
+            
+            // Format number based on decimals
+            let displayNum;
+            if (target % 1 !== 0) {
+                displayNum = currentCount.toFixed(1);
+            } else {
+                displayNum = Math.floor(currentCount);
+            }
 
-    header.addEventListener("click", () => {
-      const isActive = item.classList.contains("active");
+            el.innerHTML = `${prefix}${displayNum}${suffix}`;
 
-      // Close all other items
-      faqItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("active");
-          const content = otherItem.querySelector(".faq-content");
-          content.style.maxHeight = null;
-        }
-      });
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                // Ensure final number is exact
+                el.innerHTML = `${prefix}${target}${suffix}`;
+            }
+        };
 
-      // Toggle current item
-      if (isActive) {
-        item.classList.remove("active");
-        const content = item.querySelector(".faq-content");
-        content.style.maxHeight = null;
-      } else {
-        item.classList.add("active");
-        const content = item.querySelector(".faq-content");
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
+        window.requestAnimationFrame(step);
+    };
 
-    // Initialize the first item as active
-    if (index === 0) {
-      item.classList.add("active");
-      const content = item.querySelector(".faq-content");
-      if (content) content.style.maxHeight = content.scrollHeight + "px";
+    // Use IntersectionObserver to trigger when visible
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counters = entry.target.querySelectorAll(".stat-number");
+                counters.forEach(counter => startCounter(counter));
+                observer.unobserve(entry.target); // Run only once
+            }
+        });
+    }, observerOptions);
+
+    const statsSection = document.querySelector(".clarity-stats-row");
+    if (statsSection) {
+        observer.observe(statsSection);
     }
-  });
 
-  // Products Grid Accordion (Mobile)
-  const productItems = document.querySelectorAll(".products-grid__item");
+    // --- Identity Tabs Logic ---
+    const tabs = document.querySelectorAll(".identity-tab");
+    const panes = document.querySelectorAll(".identity-pane");
 
-  productItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      const isMobile = window.innerWidth <= 991;
-      if (!isMobile) return;
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+            const target = tab.getAttribute("data-tab");
 
-      const isActive = item.classList.contains("active");
+            // Remove active classes
+            tabs.forEach(t => t.classList.remove("active"));
+            panes.forEach(p => p.classList.remove("active"));
 
-      // Close other items
-      productItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove("active");
-        }
-      });
-
-      // Toggle current
-      item.classList.toggle("active");
+            // Add active class to clicked tab and corresponding pane
+            tab.classList.add("active");
+            const targetPane = document.getElementById(target);
+            if (targetPane) targetPane.classList.add("active");
+        });
     });
-  });
 });

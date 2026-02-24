@@ -16,9 +16,9 @@
 <body>
   <div class="site-wrapper">
     <main class="flex-grow-1">
-      <!-- <div class="bg-gradient position-absolute top-0">
+      <div class="bg-gradient position-absolute top-0">
         <img src="assets/images/hero_bgs.svg" class="w-100" alt="bg" />
-      </div> -->
+      </div>
 
       <!-- Navbar -->
       <nav class="navbar">
@@ -35,7 +35,7 @@
             <!-- Menu Header for Overlay -->
             <div class="menu-header">
               <a class="navbar-brand" href="#">
-                <img src="assets/images/small-logo.svg" alt="logo_img" />
+                <img src="assets/images/logo.svg" alt="logo_img" />
               </a>
               <button class="btn-close-custom" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-label="Close">
@@ -79,19 +79,61 @@
       </nav>
 
       <!-- Main Section -->
-      <section class="main_video_section">
-        <!-- <video autoplay muted loop playsinline width="100%">
-          <source src="assets/videos/services.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video> -->
-        <img src="assets/images/hero_bg.svg" alt="hero_bg" class="full-width"/>
+      <div class="main_page_header">
+          <video autoplay muted loop playsinline width="100%" class="object-fit-cover">
+            <source src="assets/images/services.mp4" type="video/mp4">
+          </video>
+          <div class="main-text">
+            <h1 class="main_title">
+                <span>Services that</span>
+                <span class="subtitle-orange">Power your Growth</span>
+            </h1>
+          </div>
+      </div>
+
+      <!-- Main Integration -->
+      <section class="main_integration">
+        <div class="container">
+          <div class="grid-5">
+            <div class="card-item">
+                <div class="card-icon">
+                    <img src="assets/images/icons/Dynamics365.svg" alt="Microsoft Dynamics 365">
+                </div>
+                <h3 class="card-title">Microsoft Dynamics 365</h3>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">
+                        <img src="assets/images/icons/Risk.svg" alt="Risk and Compliance">
+                </div>
+                <h3 class="card-title">Risk and Compliance <br> Solutions</h3>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">
+                    <img src="assets/images/icons/cyberSecurity.svg" alt="Cyber security">
+                  </div>
+                <h3 class="card-title">Cybersecurity Solutions</h3>
+            </div>
+            <div class="card-item">
+                <div class="card-icon">
+                  <img src="assets/images/icons/AI&RPA.svg" alt="AI and RPA">
+                </div>
+                <h3 class="card-title">AI and RPA Solutions</h3>
+            </div>
+            <div class="card-item">
+                 <div class="card-icon">
+                        <img src="assets/images/icons/Marketing.svg" alt="Digital Marketing">
+                  </div>
+                  <h3 class="card-title">Digital Marketing & <br> Development</h3>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Main services -->
       <section class="main_sevices_managment">
         <div class="container">
-          <div class="grid-2">
-            <div class="main-text">
+          <div class="grid-2 align-items-center">
+            <div class="small_main_text">
                 <div class="badge-pill">
                 <img src="assets/images/icons/mazaya_icon.svg" alt="mazaya_icon">
                 <span class="secondary-color">Mazaya Services</span>
@@ -140,7 +182,7 @@
            <div class="custom-card products-grid">
              <!-- Robot Center -->
              <div class="products-grid__center">
-               <img src="assets/images/robot_saudi.png" alt="Mazaya Robot" class="products-grid__robot">
+               <img src="assets/images/robot-up.svg" alt="Mazaya Robot" class="products-grid__robot">
              </div>
 
              <!-- Products Items -->
@@ -313,7 +355,7 @@
             <div class="grid_img">
               <img src="assets/images/automator.svg" alt="Managment System" class="h-img"/>
             </div>
-            <div class="main-text">
+            <div class="small_main_text">
                 <div class="badge-pill">
                 <img src="assets/images/icons/mazaya_icon.svg" alt="mazaya_icon">
                 <span class="secondary-color">Automator Management System</span>

@@ -7,14 +7,26 @@ body {
     color: $font-color;
     margin: 0;
     padding: 0;
+    min-width: 350px;
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
-
-p {
-    margin: 0;
+.custom-ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
 }
-
-
+// Wrapper & Main text
+.site-wrapper {
+    // @include flex($direction: column, $align: stretch);
+    min-height: 100vh;
+}  
+main {
+    max-width: 100%;
+}
+section {
+    padding-inline: $main-inline-padding;
+    position: relative;
+    padding-block: 2rem;
+}

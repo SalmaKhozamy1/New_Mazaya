@@ -1,46 +1,44 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
 
-.custom-btn {
-    @include flex($justify: flex-start);
-    border-radius: 8px;
-    padding: 12px 20px;
-    font-weight: 500;
-    font-size: $size-sm;
-    border: 0px;
-    cursor: pointer;
-    text-decoration: none;
-}
 
-.btn-secondary {
-  background-color: $secondary-color;
-  color: white;
-}
-
-.description {
-    font-size: 16px;
-    font-weight: 500;
+.custom-label {
+    display: block;
     color: $desc-color;
+    font-size: $size-sm;
+    font-weight: 500;
+    margin-bottom: 0.4rem; 
 }
-section {
-    margin-top: 2vw;
-    padding-block: 2rem;
-    padding-inline: $main-inline-padding;
-    position: relative;
-}
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
-}
+.custom-form {
+    .form-label {
+       @extend .custom-label;
+    }
 
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    .form-control-custom {
+        width: 100%;
+        background-color: $light-gray-color;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: .8rem .8rem;
+        font-size: 16px;
+        color: $font-color;
+        outline: none;
+        transition: $transition-base;
+
+        &::placeholder {
+            color: #A0A0A0;
+            font-size: $size-xs;
+            font-weight: 400;
+        }
+
+        &:focus {
+            background-color: #f2f2f2;
+            box-shadow: 0 0 0 1px rgba($secondary-color, 0.5);
+        }
+    }
+
+    textarea.form-control-custom {
+        resize: none;
+        height: auto;
+    }
 }
-
-.flex-grow-1 { flex-grow: 1; }
-
-// media query
-@media (max-width: $media-md) {
-    .grid-2 { grid-template-columns: 1fr; }
-} 
