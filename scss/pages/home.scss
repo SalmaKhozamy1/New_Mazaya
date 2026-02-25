@@ -241,11 +241,33 @@
         margin-bottom: 4rem;
     }
     .clarity-card {
-        border-radius: 40px; background: radial-gradient(130.67% 120.5% at 50% 100%, #151515 0%, #000 100%);
-        padding: 4rem; position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);
-        @include flex($direction: column, $gap: 4rem);
+        border-radius: 40px; 
+        background: radial-gradient(130.67% 120.5% at 50% 100%, #151515 0%, #000 100%);
+        padding: 2rem; 
+        position: relative; 
+        overflow: hidden; 
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        @include flex($direction: column, $gap: 1rem);
+        
+        &::before {
+            content: ""; position: absolute; bottom: -10%; left: -10%; width: 50%; height: 50%; 
+            background: radial-gradient(circle, rgba($primary-color, 0.6) 0%, transparent 80%); 
+            filter: blur(60px); pointer-events: none; z-index: 0;
+        }
+        &::after {
+            content: ""; position: absolute; top: -5%; right: -5%; width: 50%; height: 50%; 
+            background: radial-gradient(circle, rgba($primary-color, 0.6) 0%, transparent 90%); 
+            filter: blur(60px); pointer-events: none; z-index: 0;
+        }
         .clarity-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
-        .clarity-logo { position: relative; z-index: 2; img { width: 140px; } }
+        .clarity-logo { 
+            position: relative; 
+            z-index: 2;
+            width: 100%; 
+            img { 
+                width: 200px; 
+            } 
+        }
     }
     .clarity-content {
         @include flex($align: stretch, $gap: 2rem); position: relative; z-index: 2; width: 100%;
@@ -263,8 +285,8 @@
         .path-labels { position: absolute; inset: 0; z-index: 3; }
         .path-pill {
             position: absolute; padding: 8px 20px; background: rgba(40, 40, 40, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; color: #fff; font-size: 14px; font-weight: 500; box-shadow: 0 4px 15px rgba(0,0,0,0.3); white-space: nowrap;
-            &.label-1 { bottom: 2%; left: 25%; }
-            &.label-2 { bottom: 25%; left: 55%; }
+            &.label-1 { bottom: 20%; left: 10%; }
+            &.label-2 { bottom: 18%; left: 45%; }
             &.label-3 { bottom: 50%; left: 42%; }
             &.label-4 { bottom: 73%; left: 70%; }
             &.label-top { top: 0% !important; right: 0%; background: $primary-color; border: none; font-weight: 600; padding: 12px 24px; box-shadow: 0 0 30px rgba($primary-color, 0.4); }
@@ -277,23 +299,22 @@
         .footer-left { 
           @include flex($direction: column, $align: flex-start, $gap: 2rem); 
           .clarity-title { 
-            font-size: 3.5rem; font-weight: 700; color: #fff; line-height: 1.1; 
+            font-size: 34px; font-weight: 600; color: #fff; line-height: 1.1; 
             span { color: $primary-color; } 
             @media (max-width: 767px) { font-size: 2.5rem; } 
           } 
-          .btn-talk-expert { 
-            @include flex($gap: 12px); padding: 16px 32px; background: $primary-color; border-radius: 12px; color: #fff; font-weight: 600; font-size: 18px; border: none; transition: $transition-base; 
-            &:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba($primary-color, 0.3); } 
-          } 
         }
         .footer-right { 
-          flex: 1; 
           .clarity-bullet-list { 
-            list-style: none; padding: 0; @include flex($direction: column, $align: flex-start, $gap: 1.5rem); 
+            @include flex($direction: column, $align: flex-start, $gap: 1.5rem); 
             li { 
-              @include flex($align: center, $gap: 16px); color: rgba(255, 255, 255, 0.8); font-size: 16px; line-height: 1.5; 
-              .check-icon { 
-                width: 24px; height: 24px; background: $primary-color; border-radius: 50%; @include flex($justify: center); flex-shrink: 0; 
+              @include flex($align: center, $gap: 16px, $wrap:nowrap); 
+              color: #fff;
+              font-size: $size-xs;  
+              font-weight: 600;
+              .check-icon {
+                @include flex($justify: center); 
+                flex-shrink: 0; 
               }
             } 
           } 

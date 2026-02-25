@@ -374,7 +374,7 @@
 .clarity-section .clarity-card {
   border-radius: 40px;
   background: radial-gradient(130.67% 120.5% at 50% 100%, #151515 0%, #000 100%);
-  padding: 4rem;
+  padding: 2rem;
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -382,8 +382,32 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  gap: 4rem;
+  gap: 1rem;
   flex-wrap: wrap;
+}
+.clarity-section .clarity-card::before {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: -10%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(240, 93, 42, 0.6) 0%, transparent 80%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.clarity-section .clarity-card::after {
+  content: "";
+  position: absolute;
+  top: -5%;
+  right: -5%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle, rgba(240, 93, 42, 0.6) 0%, transparent 90%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
 }
 .clarity-section .clarity-card .clarity-grid {
   position: absolute;
@@ -395,9 +419,10 @@
 .clarity-section .clarity-card .clarity-logo {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 .clarity-section .clarity-card .clarity-logo img {
-  width: 140px;
+  width: 200px;
 }
 .clarity-section .clarity-content {
   display: flex;
@@ -466,12 +491,12 @@
   white-space: nowrap;
 }
 .clarity-section .path-visual-container .path-pill.label-1 {
-  bottom: 2%;
-  left: 25%;
+  bottom: 20%;
+  left: 10%;
 }
 .clarity-section .path-visual-container .path-pill.label-2 {
-  bottom: 25%;
-  left: 55%;
+  bottom: 18%;
+  left: 45%;
 }
 .clarity-section .path-visual-container .path-pill.label-3 {
   bottom: 50%;
@@ -522,8 +547,8 @@
   flex-wrap: wrap;
 }
 .clarity-section .clarity-footer-row .footer-left .clarity-title {
-  font-size: 3.5rem;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 600;
   color: #fff;
   line-height: 1.1;
 }
@@ -535,32 +560,7 @@
     font-size: 2.5rem;
   }
 }
-.clarity-section .clarity-footer-row .footer-left .btn-talk-expert {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  gap: 12px;
-  flex-wrap: wrap;
-  padding: 16px 32px;
-  background: #F05D2A;
-  border-radius: 12px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
-  border: none;
-  transition: all 0.3s ease;
-}
-.clarity-section .clarity-footer-row .footer-left .btn-talk-expert:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 30px rgba(240, 93, 42, 0.3);
-}
-.clarity-section .clarity-footer-row .footer-right {
-  flex: 1;
-}
 .clarity-section .clarity-footer-row .footer-right .clarity-bullet-list {
-  list-style: none;
-  padding: 0;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -574,16 +574,12 @@
   align-items: center;
   flex-direction: row;
   gap: 16px;
-  flex-wrap: wrap;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 16px;
-  line-height: 1.5;
+  flex-wrap: nowrap;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
 }
 .clarity-section .clarity-footer-row .footer-right .clarity-bullet-list li .check-icon {
-  width: 24px;
-  height: 24px;
-  background: #F05D2A;
-  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;

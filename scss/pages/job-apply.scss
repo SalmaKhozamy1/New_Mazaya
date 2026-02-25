@@ -2,14 +2,12 @@
 @use '../abstracts/mixins' as *;
 
 .job-apply-page {
-    padding-bottom: 5rem;
-
+    .container  {
+        @include flex($direction: column, $align: center, $gap: 1.1rem);
+    }
     .stepper-container {
-        margin-bottom: 3rem;
-        padding-block: 2rem;
-        
         .stepper {
-            @include flex($justify: space-between, $align: baseline, $gap: 0);
+            @include flex($justify: space-between, $align: start, $gap: 0);
             position: relative;
             width: 100%;
             max-width: 1200px;
@@ -52,13 +50,14 @@
                         background: transparent;
                         border-radius: 50%;
                         transition: $transition-base;
+                        @include flex($justify: center);
                     }
                 }
 
                 .step-label {
-                    font-size: 14px;
+                    font-size: 12px;
                     font-weight: 500;
-                    color: #aaa;
+                    color: $desc-color;
                     transition: $transition-base;
                     max-width: 120px;
                 }
@@ -71,8 +70,7 @@
                         }
                     }
                     .step-label {
-                        color: $secondary-color;
-                        font-weight: 600;
+                        color: $primary-color;
                     }
                 }
 
@@ -81,10 +79,11 @@
                         background: $primary-color;
                         border-color: $primary-color;
                         &::after {
-                            content: "✓";
+                            content: "\F633";
+                            font-family: bootstrap-icons !important;
+                            height: auto;
+                            width: auto;
                             color: #fff;
-                            background: transparent;
-                            font-size: 14px;
                         }
                     }
                     .step-label {
@@ -98,52 +97,16 @@
     .form-step {
         display: none;
         &.active {
-            display: block;
+            @include flex($direction: column, $gap: 1rem);
             animation: fadeIn 0.4s ease-out;
         }
-    }
-
-    .upload-area {
-        border: 2px dashed #EFEFEF;
-        border-radius: 16px;
-        padding: 4rem 2rem;
-        @include flex($direction: column, $justify: center, $gap: 1.5rem);
-        background: #fafafa;
-        cursor: pointer;
-        transition: $transition-base;
-
-        &:hover {
-            border-color: $primary-color;
-            background: rgba($primary-color, 0.02);
-        }
-
-        .upload-icon {
-            width: 64px;
-            height: 64px;
-            color: $primary-color;
-            background: rgba($primary-color, 0.05);
-            border-radius: 50%;
-            @include flex($justify: center);
-            svg {
-                width: 32px;
-                height: 32px;
-            }
-        }
-
-        .upload-text {
-            font-size: 18px;
-            font-weight: 500;
-            color: $desc-color;
-            span {
-                color: $primary-color;
-            }
+        & > div {
+            width: 100%;
         }
     }
-
     .step-header {
-        @include flex($justify: flex-start, $gap: 1.5rem);
-        margin-bottom: 2rem;
-
+        @include flex($justify: flex-start, $gap: 1rem);
+        width: 100%;
         .icon-box {
             width: 48px;
             height: 48px;
@@ -152,75 +115,45 @@
             @include flex($justify: center);
             color: $primary-color;
             svg {
-                width: 24px;
-                height: 24px;
+                width: 32px;
+                height: 32px;
             }
         }
 
         .step-title {
             font-size: 24px;
-            font-weight: 600;
-            color: $secondary-color;
-            margin: 0;
+            font-weight: 400;
         }
     }
 
     // AI Autofill Banner
     .autofill-banner {
-        @include flex($justify: space-between, $align: center, $gap: 1.5rem);
-        margin-bottom: 2rem;
-        padding: 1.5rem 2.5rem;
-        
-        @media (max-width: 768px) {
-            flex-direction: column;
-            align-items: flex-start;
-        }
+        @include flex($justify: space-between, $align: center, $gap: 1rem);
 
         .banner-info {
+            font-weight: 400;
             .banner-title {
-                font-size: 18px;
-                font-weight: 600;
-                color: $font-color;
-                margin-bottom: 0.5rem;
+                font-size: $size-sm;
+                margin-bottom: 1rem;
             }
             .banner-desc {
-                font-size: 14px;
+                font-size: $size-sm;
                 color: $desc-color;
             }
         }
 
-        .btn-autofill {
-            background: $secondary-color;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 10px;
-            font-size: 15px;
-            font-weight: 500;
-            @include flex($gap: 8px);
-            border: none;
-            transition: $transition-base;
-
-            &:hover {
-                // background: lighten($secondary-color, 5%);
-                transform: translateY(-2px);
-            }
-        }
     }
 
     // Form Section Card (Inner)
     .form-section-card {
-        padding: 2.5rem;
-        margin-bottom: 2rem;
         position: relative;
-
         .section-header {
             @include flex($justify: space-between, $align: center);
-            margin-bottom: 2.5rem;
+            width: 100%;
             cursor: pointer;
 
             .header-left {
                 @include flex($gap: 1.2rem);
-                
                 .icon-box {
                     width: 44px;
                     height: 44px;
@@ -239,10 +172,13 @@
                 }
             }
 
+            &.collapsed .arrow-icon {
+                transform: rotate(-90deg);
+            }
+
             .arrow-icon {
                 color: $primary-color;
                 transition: transform 0.3s ease;
-                &.collapsed { transform: rotate(-90deg); }
                 svg { width: 24px; height: 24px; }
             }
         }
@@ -250,47 +186,15 @@
 
     // Form Controls
     .form-group {
-        margin-bottom: 1.5rem;
-
-        .form-label {
-            font-size: 16px;
-            font-weight: 500;
-            color: $font-color;
-            margin-bottom: 0.8rem;
-            display: block;
-
-            .req-star { color: #ff4d4d; margin-inline-start: 4px; }
-        }
-
-        .form-control, .form-select {
-            background: #f7f7f7;
-            border: 1px solid transparent;
-            border-radius: 12px;
-            padding: 12px 18px;
-            font-size: 15px;
-            color: $font-color;
-            transition: all 0.3s ease;
-
-            &:focus {
-                background: #fff;
-                border-color: rgba($primary-color, 0.3);
-                box-shadow: 0 0 0 4px rgba($primary-color, 0.05);
-                outline: none;
-            }
-
-            &::placeholder { color: #aaa; }
-        }
-
         .gender-switch {
             @include flex($gap: 1rem);
             
             .btn-gender {
-                flex: 1;
                 @include flex($justify: center, $gap: 10px);
                 background: #f7f7f7;
                 border: 1px solid transparent;
-                padding: 12px;
-                border-radius: 12px;
+                padding: 11px 20px;
+                border-radius: 8px;
                 color: $desc-color;
                 font-weight: 500;
                 cursor: pointer;
@@ -298,50 +202,20 @@
 
                 svg { width: 20px; height: 20px; color: #aaa; }
 
-                &.active {
+                &:has(input:checked) {
                     background: rgba($primary-color, 0.05);
                     border-color: rgba($primary-color, 0.2);
                     color: $primary-color;
                     svg { color: $primary-color; }
                 }
 
-                &:hover:not(.active) {
+                &:hover:not(:has(input:checked)) {
                     background: #eee;
                 }
             }
         }
     }
 
-    .form-actions {
-        margin-top: 3rem;
-        @include flex($justify: flex-end, $gap: 1rem);
-        
-        button {
-            padding: 12px 32px;
-            border-radius: 10px;
-            font-weight: 500;
-            transition: $transition-base;
-        }
-
-        .btn-prev {
-            background: #fff;
-            border: 1px solid #EFEFEF;
-            color: $secondary-color;
-            &:hover {
-                background: #f8f8f8;
-            }
-        }
-
-        .btn-next {
-            background: $secondary-color;
-            color: #fff;
-            border: none;
-            &:hover {
-                // background: darken($secondary-color, 5%);
-                transform: translateY(-2px);
-            }
-        }
-    }
 }
 
 @keyframes fadeIn {

@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mazaya</title>
 
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Bootstrap5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Main Css -->
@@ -35,7 +37,7 @@
             <!-- Menu Header for Overlay -->
             <div class="menu-header">
               <a class="navbar-brand" href="#">
-                <img src="assets/images/logo.svg" alt="logo_img" />
+                <img src="assets/images/small-logo.svg" alt="logo_img" />
               </a>
               <button class="btn-close-custom" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-label="Close">
@@ -83,8 +85,8 @@
         <div class="container">
           <div class="main-text">
             <h1 class="main_title">
-                Join our team.
-                <span class="subtitle-orange">Start your journey with us today.</span>
+                Grow your career with purpose.
+                <span class="subtitle-orange">Be part of solutions powering tomorrow.</span>
             </h1>
           </div>
         </div>
@@ -95,7 +97,7 @@
         <div class="container">
             
             <!-- Stepper Container -->
-            <div class="stepper-container custom-card">
+            <div class="stepper-container custom-card custom-card--sm w-100">
                 <div class="stepper">
                     <div class="step active" data-step="1">
                         <div class="step-circle"></div>
@@ -129,46 +131,67 @@
             </div>
 
             <!-- Form Content Container -->
-            <div class="form-content-container custom-card">
-                <form id="applyForm">
+            <div class="form-content-container w-100">
+                <form id="applyForm" class="custom-form w-100">
                     <!-- Step 1: Upload CV -->
                     <div class="form-step active" data-step="1">
-                        <div class="step-header">
+                        <div class="custom-form custom-card custom-card--sm">
+                            <div class="step-header">
                             <div class="icon-box">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="12" y2="12"></line><line x1="15" y1="15" x2="12" y2="12"></line></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0752 1.66699C18.5255 1.66697 20.4664 1.66688 21.9854 1.87109C23.5485 2.08125 24.8137 2.52379 25.8115 3.52148C26.8093 4.51925 27.2527 5.78455 27.4629 7.34766C27.6671 8.86655 27.667 10.8076 27.667 13.2578V17.9521C27.6679 18.8835 27.6685 19.6209 27.3877 20.2988C27.1069 20.9767 26.585 21.4973 25.9258 22.1553L19.4961 28.585C19.463 28.6181 19.4298 28.6503 19.3975 28.6826C18.8292 29.2518 18.3806 29.702 17.8105 29.9746C17.6929 30.0309 17.5722 30.0806 17.4492 30.124C16.8535 30.3343 16.2182 30.3337 15.4141 30.333H15.21C13.1012 30.333 11.4303 30.3332 10.1074 30.1787C8.7498 30.0202 7.6305 29.6878 6.69141 28.9307C6.33996 28.6473 6.01971 28.327 5.73633 27.9756C4.97908 27.0364 4.64584 25.9164 4.48731 24.5586C4.3329 23.2359 4.33299 21.5654 4.33301 19.457V16C4.33301 15.4478 4.78087 15.0002 5.33301 15C5.88529 15 6.33301 15.4477 6.33301 16V19.3926C6.33301 21.5799 6.33528 23.1338 6.47461 24.3271C6.61142 25.4986 6.86893 26.1937 7.29297 26.7197C7.48676 26.9601 7.70596 27.1792 7.94629 27.373C8.47239 27.7972 9.16802 28.0556 10.3398 28.1924C11.5332 28.3317 13.087 28.333 15.2744 28.333C15.7888 28.333 16.1106 28.3296 16.333 28.3154V27.9268C16.333 26.1033 16.3329 24.6335 16.4883 23.4775C16.6496 22.2775 16.9954 21.2674 17.7979 20.4648C18.6003 19.6624 19.6106 19.3167 20.8105 19.1553C21.9664 18.9999 23.4365 19 25.2598 19H25.6445C25.6624 18.7439 25.667 18.3748 25.667 17.791V13.333C25.667 10.7908 25.6647 8.98442 25.4805 7.61426C25.3001 6.27292 24.9617 5.4998 24.3975 4.93555C23.8332 4.37137 23.0601 4.03288 21.7188 3.85254C20.3486 3.66834 18.5423 3.66699 16 3.66699C15.4478 3.66699 15.0002 3.21913 15 2.66699C15 2.11471 15.4477 1.66699 16 1.66699H16.0752ZM24.251 21.001C22.8979 21.0059 21.8826 21.0294 21.0771 21.1377C20.099 21.2692 19.5809 21.5099 19.2119 21.8789C18.843 22.2479 18.6022 22.7659 18.4707 23.7441C18.3624 24.5496 18.3398 25.5648 18.335 26.918L24.251 21.001ZM9.33301 1.66699C9.70073 1.66699 10.0237 1.79383 10.2666 1.92383C10.5174 2.05806 10.7542 2.23429 10.9688 2.41699C11.397 2.78177 11.83 3.25455 12.2217 3.7168C12.5867 4.14754 12.9407 4.59949 13.2451 4.98731C13.2705 5.01961 13.2957 5.05163 13.3203 5.08301C13.6586 5.51366 13.8998 5.81435 14.0508 5.96973C14.4355 6.36577 14.4262 6.99892 14.0303 7.38379C13.6342 7.76868 13.0011 7.7593 12.6162 7.36328C12.3741 7.11418 12.0582 6.71325 11.748 6.31836C11.7243 6.28806 11.6999 6.25726 11.6758 6.22656C11.3676 5.83395 11.0349 5.41057 10.6953 5.00977C10.572 4.86429 10.4509 4.72552 10.333 4.5957V13.333C10.333 13.8853 9.88529 14.333 9.33301 14.333C8.78087 14.3328 8.33301 13.8852 8.33301 13.333V4.5957C8.21517 4.7255 8.09395 4.86432 7.9707 5.00977C7.63115 5.4105 7.29938 5.83402 6.99121 6.22656C6.96708 6.2573 6.94277 6.28802 6.91895 6.31836C6.6088 6.71322 6.29287 7.11414 6.05078 7.36328C5.66591 7.75924 5.03277 7.76852 4.63672 7.38379C4.2407 6.99887 4.23132 6.36576 4.61621 5.96973C4.7672 5.81439 5.00758 5.51349 5.3457 5.08301C5.37028 5.05172 5.39561 5.01952 5.4209 4.98731C5.72535 4.59945 6.08028 4.14759 6.44531 3.7168C6.83704 3.2545 7.26995 2.78177 7.69824 2.41699C7.91281 2.23425 8.14954 2.05807 8.40039 1.92383C8.64323 1.79388 8.96546 1.66707 9.33301 1.66699Z" fill="url(#paint0_linear_384_4023)"/>
+                                <defs>
+                                    <linearGradient id="paint0_linear_384_4023" x1="4.34064" y1="15.9637" x2="27.7317" y2="15.9637" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#E88B2A"/>
+                                    <stop offset="0.7318" stop-color="#E26730"/>
+                                    <stop offset="1" stop-color="#DF5832"/>
+                                    </linearGradient>
+                                </defs>
+                                </svg>
                             </div>
                             <h2 class="step-title">Upload CV</h2>
-                        </div>
-                        
-                        <div class="upload-area" onclick="document.getElementById('cvUpload').click()">
-                            <input type="file" id="cvUpload" class="d-none" accept=".pdf,.doc,.docx">
-                            <div class="upload-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
                             </div>
-                            <p class="upload-text">Drag & Drop or <span>Choose File</span> to Upload your CV</p>
+                            <div class="upload-area w-100" onclick="document.getElementById('cvUpload').click()">
+                                <input type="file" id="cvUpload" class="d-none" accept=".pdf,.doc,.docx">
+                                <div>
+                                    <img src="../assets/images/icons/upload_icon.svg" alt="upload-icon" width="66" height="66">
+                                </div>
+                                <p class="upload-text">Drag & Drop or <span>Choose File</span> to Upload your CV</p>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button>
                         </div>
                     </div>
 
                     <!-- Step 2: Personal Information -->
                     <div class="form-step" data-step="2">
                         <!-- AI Autofill Header -->
-                        <div class="autofill-banner custom-card">
+                        <div class="autofill-banner custom-card custom-card--sm">
                             <div class="banner-info">
                                 <h3 class="banner-title">AutoFill Your Info Using CV</h3>
                                 <p class="banner-desc">Let AI analyze your CV to automatically fill the application fields.</p>
                             </div>
-                            <button type="button" class="btn-autofill">
+                            <button type="button" class="custom-btn btn-secondary">
                                 Auto-fill my info from CV
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
                             </button>
                         </div>
-
                         <!-- Personal Info Card -->
-                        <div class="form-section-card custom-card">
-                            <div class="section-header">
+                        <div class="form-section-card custom-card custom-card--sm">
+                            <div class="section-header" data-bs-toggle="collapse" data-bs-target="#personalInfoCollapse" aria-expanded="true" aria-controls="personalInfoCollapse">
                                 <div class="header-left">
                                     <div class="icon-box">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.25876 19.7832C12.9974 16.9616 19.0025 16.9617 23.7412 19.7832C23.8963 19.8755 24.0887 19.9831 24.3056 20.1055C25.2561 20.6417 26.6926 21.4527 27.6767 22.416C28.2922 23.0185 28.8771 23.8125 28.9834 24.7852C29.0964 25.8196 28.6445 26.7898 27.7392 27.6523C26.1773 29.1404 24.3033 30.333 21.8789 30.333H10.1211C7.69677 30.3329 5.82259 29.1404 4.26072 27.6523C3.35551 26.7899 2.90358 25.8195 3.01657 24.7852C3.1229 23.8124 3.70863 23.0185 4.32419 22.416C5.30841 21.4527 6.7449 20.6416 7.69529 20.1055C7.91206 19.9832 8.10374 19.8755 8.25876 19.7832ZM22.7187 21.501C18.6106 19.0548 13.3904 19.055 9.2822 21.501C9.05833 21.6343 8.81259 21.7741 8.55564 21.9199C7.60558 22.4589 6.49602 23.0878 5.72263 23.8447C5.24264 24.3146 5.03772 24.7024 5.00486 25.002C4.97886 25.2398 5.03976 25.6327 5.6406 26.2051C7.02153 27.5206 8.42475 28.3329 10.1211 28.333H21.8789C23.5754 28.333 24.9792 27.5208 26.3603 26.2051C26.9612 25.6327 27.0211 25.2398 26.9951 25.002C26.9622 24.7024 26.7573 24.3145 26.2773 23.8447C25.5039 23.0878 24.3943 22.4589 23.4443 21.9199C23.1874 21.7742 22.9426 21.6343 22.7187 21.501ZM16 1.66699C19.8659 1.66702 23 4.80102 23 8.66699C22.9998 12.5328 19.8658 15.667 16 15.667C12.1341 15.667 9.00015 12.5328 8.99997 8.66699C8.99997 4.801 12.134 1.66699 16 1.66699ZM16 3.66699C13.2385 3.66699 11 5.90557 11 8.66699C11.0001 11.4283 13.2387 13.667 16 13.667C18.7613 13.667 20.9998 11.4282 21 8.66699C21 5.90559 18.7614 3.66702 16 3.66699Z" fill="url(#paint0_linear_384_4244)"/>
+                                        <defs>
+                                            <linearGradient id="paint0_linear_384_4244" x1="3.00801" y1="15.9636" x2="29.0724" y2="15.9636" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#E88B2A"/>
+                                            <stop offset="0.7318" stop-color="#E26730"/>
+                                            <stop offset="1" stop-color="#DF5832"/>
+                                            </linearGradient>
+                                        </defs>
+                                        </svg>
                                     </div>
                                     <h2 class="section-title">Personal Information</h2>
                                 </div>
@@ -177,35 +200,42 @@
                                 </div>
                             </div>
 
-                            <div class="row g-4">
-                                <div class="col-12">
+                            <div class="grid-2 w-100 collapse show" id="personalInfoCollapse">
+                                <div class="full-width">
                                     <div class="form-group">
                                         <label class="form-label">Full Name<span class="req-star">*</span></label>
                                         <input type="text" class="form-control" placeholder="Enter Full Name">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Date of birth<span class="req-star">*</span></label>
                                         <input type="text" class="form-control" placeholder="DD/MM/YYYY">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Gender<span class="req-star">*</span></label>
                                         <div class="gender-switch">
-                                            <div class="btn-gender active">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            <label class="btn-gender">
+                                                <input type="radio" name="gender" value="male" class="d-none" checked>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M14.4954 16.5L18.2154 17.62C19.6054 18.04 20.6354 19.16 20.9754 20.51C21.1154 21.05 20.6454 21.5 20.0954 21.5H3.90536C3.34536 21.5 2.88536 21.05 3.02536 20.51C3.36536 19.16 4.39535 18.04 5.78535 17.62L9.50535 16.5V14.5601C7.72535 13.1701 6.50535 11.5 6.50535 7.92004C6.50535 4.34004 8.46536 2.5 11.4954 2.5C13.6454 2.5 14.5454 3.5 14.5454 3.5C17.0854 3.5 17.5054 5.60004 17.5054 7.92004C17.5054 11.5 16.2854 13.1701 14.5054 14.5601V16.5H14.4954Z" fill="#F05D2A"/>
+                                                </svg>
                                                 Male
-                                            </div>
-                                            <div class="btn-gender">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                            </label>
+                                            <label class="btn-gender">
+                                                <input type="radio" name="gender" value="female" class="d-none">
+                                                
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <path d="M20.1032 22.2497H3.91319C3.38319 22.2497 2.88319 22.0097 2.57319 21.6097C2.28319 21.2397 2.19319 20.7798 2.30319 20.3198C2.71319 18.6898 3.97319 17.3797 5.57319 16.8897L8.75319 15.9298V14.9797C7.67319 14.8097 6.66319 14.5498 5.74319 14.2098C5.54319 14.1398 5.38319 13.9798 5.30319 13.7798C5.22319 13.5798 5.23319 13.3598 5.33319 13.1698C5.78319 12.2698 6.25319 10.8997 6.25319 7.59971C6.25319 3.56971 8.61319 2.33973 9.62319 1.99973C11.2932 1.43973 13.2132 1.81974 14.3032 2.87974C15.2532 2.78974 16.0032 2.9797 16.5632 3.4697C17.7532 4.4797 17.7532 6.38971 17.7532 8.59971C17.7532 10.8097 18.3532 12.5498 18.6732 13.1798C18.7732 13.3698 18.7832 13.5898 18.7032 13.7898C18.6232 13.9898 18.4632 14.1497 18.2632 14.2197C17.3432 14.5597 16.3332 14.8197 15.2532 14.9897V15.9398L18.4332 16.8998C20.0432 17.3898 21.2932 18.6998 21.7032 20.3198C21.8132 20.7698 21.7132 21.2397 21.4332 21.6097C21.1232 22.0097 20.6232 22.2497 20.0932 22.2497H20.1032ZM7.03319 13.0698C7.82319 13.3098 8.69319 13.4797 9.60319 13.5997C9.98319 13.6497 10.2632 13.9698 10.2632 14.3398V16.4997C10.2632 16.8297 10.0432 17.1197 9.73319 17.2197L6.01319 18.3398C4.91319 18.6698 4.04319 19.5798 3.76319 20.6998C3.76319 20.7098 3.83319 20.7597 3.92319 20.7597H20.1132C20.2032 20.7597 20.2632 20.7198 20.2732 20.6998C19.9832 19.5898 19.1232 18.6897 18.0232 18.3497L14.3132 17.2297C13.9932 17.1297 13.7832 16.8397 13.7832 16.5097V14.3497C13.7832 13.9697 14.0632 13.6497 14.4432 13.6097C15.3632 13.4897 16.2332 13.3198 17.0332 13.0798C16.6732 12.0698 16.2832 10.4697 16.2832 8.61973C16.2832 6.76973 16.2832 5.19975 15.6232 4.63975C15.3332 4.39975 14.8432 4.3298 14.1532 4.4398C13.8732 4.4898 13.6032 4.37976 13.4332 4.14976C12.9032 3.44976 11.4432 2.99981 10.1232 3.44981C8.61319 3.95981 7.77319 5.44974 7.77319 7.62974C7.77319 10.4497 7.44319 12.0298 7.04319 13.0898L7.03319 13.0698Z" fill="#424446"/>
+                                                </svg>
                                                 Female
-                                            </div>
+                                            </label>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Marital Status<span class="req-star">*</span></label>
                                         <select class="form-select">
@@ -214,7 +244,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Nationality<span class="req-star">*</span></label>
                                         <select class="form-select">
@@ -224,7 +254,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Country<span class="req-star">*</span></label>
                                         <select class="form-select">
@@ -233,7 +263,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">City<span class="req-star">*</span></label>
                                         <select class="form-select">
@@ -243,31 +273,34 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="full-width">
                                     <div class="form-group">
                                         <label class="form-label">Current Address<span class="req-star">*</span></label>
                                         <select class="form-select">
                                             <option selected disabled>Current Address</option>
+                                            <option>Riyadh</option>
+                                            <option>Jeddah</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-12">
+                                <div class="full-width">
                                     <div class="form-group mb-0">
                                         <label class="form-label">Upload your photo<span class="req-star">*</span></label>
-                                        <div class="upload-area py-5" style="padding: 3rem 2rem !important;">
+                                        <div class="upload-area py-5" style="padding: 3rem 2rem !important;" onclick="document.getElementById('photoUpload').click()">
+                                            <input type="file" id="photoUpload" class="d-none" accept="image/*">
                                             <div class="upload-icon" style="width: 50px; height: 50px;">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                                <img src="../assets/images/icons/upload_icon.svg" alt="upload-icon" width="66" height="66">
                                             </div>
                                             <p class="upload-text" style="font-size: 16px;">Drag & Drop or <span>Choose File</span> to Upload your photo</p>
-                                        </div>
+                                        </input>
                                     </div>
                                 </div>
                             </div>
+                           </div>
                         </div>
-
                         <!-- Contact Info Card -->
-                        <div class="form-section-card custom-card">
-                            <div class="section-header">
+                        <div class="form-section-card custom-card custom-card--sm">
+                            <div class="section-header" data-bs-toggle="collapse" data-bs-target="#contactInfoCollapse" aria-expanded="true" aria-controls="contactInfoCollapse">
                                 <div class="header-left">
                                     <div class="icon-box">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -279,26 +312,26 @@
                                 </div>
                             </div>
 
-                            <div class="row g-4">
-                                <div class="col-md-6">
+                            <div class="grid-2 w-100 collapse show" id="contactInfoCollapse">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Email<span class="req-star">*</span></label>
                                         <input type="email" class="form-control" placeholder="mazaya@gmail.com">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Phone Number<span class="req-star">*</span></label>
                                         <input type="text" class="form-control" placeholder="2255555">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">LinkedIn profile</label>
                                         <input type="text" class="form-control" placeholder="mazaya@gmail.com">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div>
                                     <div class="form-group">
                                         <label class="form-label">Portfolio URL<span class="req-star">*</span></label>
                                         <input type="text" class="form-control" placeholder="2255555">
@@ -306,18 +339,63 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-step" data-step="3"><div class="step-header"><h2 class="step-title">Academic qualifications</h2></div><p class="mt-4">Academic qualification details here.</p></div>
-                    <div class="form-step" data-step="4"><div class="step-header"><h2 class="step-title">Work Experience</h2></div><p class="mt-4">Work experience history here.</p></div>
-                    <div class="form-step" data-step="5"><div class="step-header"><h2 class="step-title">Training Courses</h2></div><p class="mt-4">Training and courses list here.</p></div>
-                    <div class="form-step" data-step="6"><div class="step-header"><h2 class="step-title">Health Information</h2></div><p class="mt-4">Health information disclosures here.</p></div>
-                    <div class="form-step" data-step="7"><div class="step-header"><h2 class="step-title">Job Preferences</h2></div><p class="mt-4">Job preferences and expectations here.</p></div>
 
-                    <!-- Navigation Buttons -->
-                    <div class="form-actions">
-                        <button type="button" class="btn btn-prev" id="prevBtn" onclick="changeStep(-1)" disabled>Previous</button>
-                        <button type="button" class="btn btn-next" id="nextBtn" onclick="changeStep(1)">Next Step</button>
+                        <div class="form-actions">
+                            <button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button>
+                            <button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button>
+                        </div>
                     </div>
+                    <div class="form-step" data-step="3"><div class="step-header"><h2 class="step-title">Academic qualifications</h2></div><p class="mt-4">Academic qualification details here.</p><div class="form-actions"><button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button><button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button></div></div>
+                    <div class="form-step" data-step="4"><div class="step-header">
+                        <!-- Contact Info Card -->
+                        <div class="form-section-card custom-card custom-card--sm">
+                            <div class="section-header" data-bs-toggle="collapse" data-bs-target="#contactInfoCollapse" aria-expanded="true" aria-controls="contactInfoCollapse">
+                                <div class="header-left">
+                                    <div class="icon-box">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    </div>
+                                    <h2 class="section-title">Contact Information</h2>
+                                </div>
+                                <div class="arrow-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                </div>
+                            </div>
+
+                            <div class="grid-2 w-100 collapse show" id="contactInfoCollapse">
+                                <div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email<span class="req-star">*</span></label>
+                                        <input type="email" class="form-control" placeholder="mazaya@gmail.com">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="2255555">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group">
+                                        <label class="form-label">LinkedIn profile</label>
+                                        <input type="text" class="form-control" placeholder="mazaya@gmail.com">
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="form-group">
+                                        <label class="form-label">Portfolio URL<span class="req-star">*</span></label>
+                                        <input type="text" class="form-control" placeholder="2255555">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button>
+                            <button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="5"><div class="step-header"><h2 class="step-title">Training Courses</h2></div><p class="mt-4">Training and courses list here.</p><div class="form-actions"><button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button><button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button></div></div>
+                    <div class="form-step" data-step="6"><div class="step-header"><h2 class="step-title">Health Information</h2></div><p class="mt-4">Health information disclosures here.</p><div class="form-actions"><button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button><button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button></div></div>
+                    <div class="form-step" data-step="7"><div class="step-header"><h2 class="step-title">Job Preferences</h2></div><p class="mt-4">Job preferences and expectations here.</p><div class="form-actions"><button type="button" class="custom-btn btn-outline-primary btn-prev" onclick="changeStep(-1)">Back</button><button type="button" class="custom-btn btn-secondary btn-next" onclick="changeStep(1)">Save & Continue</button></div></div>
                 </form>
             </div>
         </div>
@@ -332,6 +410,55 @@
             const steps = document.querySelectorAll('.form-step');
             const stepperSteps = document.querySelectorAll('.step');
             
+            if (stepDelta > 0) {
+                let isValid = true;
+                const currentStepEl = steps[currentStep - 1];
+                
+                if (currentStep === 1) {
+                    const cvInput = document.getElementById('cvUpload');
+                    if (!cvInput || !cvInput.files.length) {
+                        alert('Please upload your CV before proceeding.');
+                        return;
+                    }
+                } else {
+                    const formGroups = currentStepEl.querySelectorAll('.form-group');
+                    formGroups.forEach(group => {
+                        const hasStar = group.querySelector('.req-star');
+                        if (hasStar) {
+                            const input = group.querySelector('input:not([type="file"]), select, textarea');
+                            if (input) {
+                                if (input.tagName === 'SELECT') {
+                                    if (input.selectedOptions.length > 0 && input.selectedOptions[0].disabled) {
+                                        isValid = false;
+                                        input.style.borderColor = '#dc3545';
+                                    } else {
+                                        input.style.borderColor = '';
+                                    }
+                                } else if (input.type === 'radio') {
+                                    const isChecked = group.querySelector(`input[name="${input.name}"]:checked`);
+                                    const genderSwitch = group.querySelector('.gender-switch');
+                                    if (!isChecked) {
+                                        isValid = false;
+                                        if (genderSwitch) genderSwitch.classList.add('border', 'border-danger', 'rounded', 'p-1');
+                                    } else {
+                                        if (genderSwitch) genderSwitch.classList.remove('border', 'border-danger', 'rounded', 'p-1');
+                                    }
+                                } else if (!input.value.trim()) {
+                                    isValid = false;
+                                    input.style.borderColor = '#dc3545';
+                                } else {
+                                    input.style.borderColor = '';
+                                }
+                            }
+                        }
+                    });
+
+                    if (!isValid) {
+                        return;
+                    }
+                }
+            }
+
             if (currentStep + stepDelta < 1 || currentStep + stepDelta > steps.length) return;
 
             // Hide/Deactivate current step
@@ -351,36 +478,143 @@
             steps[currentStep - 1].classList.add('active');
             stepperSteps[currentStep - 1].classList.add('active');
 
-            // Update buttons State
-            document.getElementById('prevBtn').disabled = currentStep === 1;
-            document.getElementById('nextBtn').innerText = currentStep === steps.length ? 'Submit Application' : 'Next Step';
+            // Update buttons State across all instances
+            document.querySelectorAll('.btn-prev').forEach(btn => {
+                btn.disabled = currentStep === 1;
+            });
+            document.querySelectorAll('.btn-next').forEach(btn => {
+                btn.innerText = currentStep === steps.length ? 'Submit Application' : 'Save & Continue';
+            });
         }
 
         // Drag and Drop Logic
-        const uploadArea = document.querySelector('.upload-area');
-        if (uploadArea) {
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.style.borderColor = '#F05D2A';
-            });
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.style.borderColor = '#EFEFEF';
-            });
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.style.borderColor = '#EFEFEF';
-                const files = e.dataTransfer.files;
+        const uploadAreas = document.querySelectorAll('.upload-area');
+
+        uploadAreas.forEach(area => {
+            const fileInput = area.querySelector('input[type="file"]');
+            const uploadText = area.querySelector('.upload-text');
+
+            if (!fileInput || !uploadText) return;
+
+            function handleFileUpload(files) {
                 if (files.length) {
-                    document.getElementById('cvUpload').files = files;
-                    alert('File uploaded: ' + files[0].name);
+                    fileInput.files = files;
+                    uploadText.innerHTML = `File uploaded: <span class="primary-color">${files[0].name}</span>`;
                 }
+            }
+
+            area.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                area.style.borderColor = '#F05D2A';
             });
-        }
+            area.addEventListener('dragleave', () => {
+                area.style.borderColor = '#EFEFEF';
+            });
+            area.addEventListener('drop', (e) => {
+                e.preventDefault();
+                area.style.borderColor = '#EFEFEF';
+                handleFileUpload(e.dataTransfer.files);
+            });
+            
+            fileInput.addEventListener('change', (e) => {
+                handleFileUpload(e.target.files);
+            });
+        });
     </script>
 
 
-    <!-- Footer -->
-    <footer>
+        <!-- FAQ Section -->
+      <section class="faq-section">
+            <div class="container">
+            
+            <!-- Section Header -->
+            <div class="main-text">
+                <div class="badge-pill">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M9.84375 12.6562C9.84375 12.8231 9.79427 12.9863 9.70156 13.125C9.60884 13.2638 9.47707 13.3719 9.32289 13.4358C9.16872 13.4996 8.99907 13.5163 8.8354 13.4838C8.67172 13.4512 8.52138 13.3709 8.40338 13.2529C8.28538 13.1349 8.20502 12.9845 8.17247 12.8209C8.13991 12.6572 8.15662 12.4875 8.22048 12.3334C8.28434 12.1792 8.39249 12.0474 8.53124 11.9547C8.66999 11.862 8.83313 11.8125 9 11.8125C9.22378 11.8125 9.43839 11.9014 9.59662 12.0596C9.75486 12.2179 9.84375 12.4325 9.84375 12.6562ZM9 5.0625C7.44891 5.0625 6.1875 6.19805 6.1875 7.59375V7.875C6.1875 8.02418 6.24677 8.16726 6.35226 8.27275C6.45775 8.37824 6.60082 8.4375 6.75 8.4375C6.89919 8.4375 7.04226 8.37824 7.14775 8.27275C7.25324 8.16726 7.3125 8.02418 7.3125 7.875V7.59375C7.3125 6.82031 8.06977 6.1875 9 6.1875C9.93024 6.1875 10.6875 6.82031 10.6875 7.59375C10.6875 8.36719 9.93024 9 9 9C8.85082 9 8.70775 9.05926 8.60226 9.16475C8.49677 9.27024 8.4375 9.41332 8.4375 9.5625V10.125C8.4375 10.2742 8.49677 10.4173 8.60226 10.5227C8.70775 10.6282 8.85082 10.6875 9 10.6875C9.14919 10.6875 9.29226 10.6282 9.39775 10.5227C9.50324 10.4173 9.5625 10.2742 9.5625 10.125V10.0744C10.845 9.83883 11.8125 8.81578 11.8125 7.59375C11.8125 6.19805 10.5511 5.0625 9 5.0625ZM16.3125 9C16.3125 10.4463 15.8836 11.8601 15.0801 13.0626C14.2766 14.2651 13.1346 15.2024 11.7984 15.7559C10.4622 16.3093 8.99189 16.4541 7.57341 16.172C6.15492 15.8898 4.85196 15.1934 3.82928 14.1707C2.80661 13.148 2.11017 11.8451 1.82801 10.4266C1.54586 9.00811 1.69067 7.53781 2.24413 6.20163C2.7976 4.86544 3.73486 3.72339 4.9374 2.91988C6.13993 2.11637 7.55373 1.6875 9 1.6875C10.9388 1.68955 12.7975 2.46063 14.1685 3.83154C15.5394 5.20246 16.3105 7.06123 16.3125 9ZM15.1875 9C15.1875 7.77623 14.8246 6.57994 14.1447 5.56241C13.4648 4.54488 12.4985 3.75181 11.3679 3.2835C10.2372 2.81518 8.99314 2.69264 7.79288 2.93139C6.59262 3.17014 5.49012 3.75944 4.62478 4.62478C3.75944 5.49011 3.17014 6.59262 2.93139 7.79288C2.69265 8.99314 2.81518 10.2372 3.2835 11.3679C3.75182 12.4985 4.54488 13.4648 5.56241 14.1447C6.57994 14.8246 7.77623 15.1875 9 15.1875C10.6405 15.1856 12.2132 14.5331 13.3732 13.3732C14.5331 12.2132 15.1856 10.6405 15.1875 9Z" fill="#F05D2A"/>
+                </svg>
+                <span> FAQs </span>
+                </div>
+
+                <h1 class="main_title font-color">
+                Got Questions? We’ve Got Answers.
+                </h1>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="FAQ_accordion accordion" id="accordionExample">
+                <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <div class="accordion_no">1</div>
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What are the key advantages of digital transformation services offered by Mazaya Solutions?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    Mazaya helps businesses improve efficiency, reduce costs, and adopt modern technologies that support long-term growth.
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <div class="accordion_no">2</div>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How do Mazaya’s digital transformation solutions improve operational efficiency?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <span class="accordion_no">3</span>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    How do Mazaya’s digital solutions give businesses a competitive advantage in the Saudi market?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <span class="accordion_no">4</span>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    How do Mazaya’s digital solutions give businesses a competitive advantage in the Saudi market?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    <strong>This is the fourth item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+                </div>
+                <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <span class="accordion_no">5</span>
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    What long-term business advantages does Mazaya deliver through digital transformation?
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                    <strong>This is the fourth item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            </div>
+      </section>
+      
+  <!-- Footer -->
+   <footer>
     <div class="container">    
       <div class="main-text">
         <div class="badge-pill">
@@ -397,15 +631,15 @@
          We design, integrate, and manage smart digital solutions that simplify operations and drive long-term success.
         </p>
 
-        <div class="footer-input-wrapper">
-          <input type="text" />
-          <button class="btn-start custom-btn btn-secondary">
+        <form class="footer-input-wrapper">
+          <input type="text" class="form-control"/>
+          <button type="submit" class="btn-start custom-btn btn-secondary">
             Get Started
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
               <path d="M12.7702 8.51203L9.14348 7.17187L7.80755 3.54234C7.72843 3.32742 7.5853 3.14193 7.39745 3.01091C7.20961 2.87989 6.9861 2.80964 6.75708 2.80964C6.52805 2.80964 6.30454 2.87989 6.1167 3.01091C5.92886 3.14193 5.78572 3.32742 5.70661 3.54234L4.36223 7.17187L0.732702 8.50781C0.517777 8.58692 0.332291 8.73006 0.20127 8.9179C0.0702496 9.10575 0 9.32926 0 9.55828C0 9.7873 0.0702496 10.0108 0.20127 10.1987C0.332291 10.3865 0.517777 10.5296 0.732702 10.6087L4.36223 11.9531L5.69817 15.5827C5.77728 15.7976 5.92042 15.9831 6.10826 16.1141C6.2961 16.2451 6.51962 16.3154 6.74864 16.3154C6.97766 16.3154 7.20117 16.2451 7.38902 16.1141C7.57686 15.9831 7.71999 15.7976 7.79911 15.5827L9.14348 11.9531L12.773 10.6172C12.9879 10.5381 13.1734 10.3949 13.3044 10.2071C13.4355 10.0193 13.5057 9.79574 13.5057 9.56672C13.5057 9.33769 13.4355 9.11418 13.3044 8.92634C13.1734 8.7385 12.9879 8.59536 12.773 8.51625L12.7702 8.51203ZM8.51067 10.9842C8.43432 11.0124 8.36498 11.0567 8.30744 11.1143C8.2499 11.1718 8.20553 11.2411 8.17739 11.3175L6.75286 15.177L5.33114 11.3203C5.30304 11.2432 5.2584 11.1731 5.20034 11.115C5.14227 11.057 5.0722 11.0123 4.99505 10.9842L1.13841 9.5625L4.99505 8.14078C5.0722 8.11269 5.14227 8.06804 5.20034 8.00998C5.2584 7.95191 5.30304 7.88184 5.33114 7.80469L6.75286 3.94805L8.17458 7.80469C8.20272 7.88104 8.24709 7.95038 8.30463 8.00792C8.36217 8.06546 8.43151 8.10983 8.50786 8.13797L12.3673 9.5625L8.51067 10.9842ZM9.00286 2.25C9.00286 2.10082 9.06212 1.95774 9.16761 1.85225C9.2731 1.74676 9.41617 1.6875 9.56536 1.6875H10.6904V0.5625C10.6904 0.413316 10.7496 0.270242 10.8551 0.164752C10.9606 0.0592632 11.1037 0 11.2529 0C11.402 0 11.5451 0.0592632 11.6506 0.164752C11.7561 0.270242 11.8154 0.413316 11.8154 0.5625V1.6875H12.9404C13.0895 1.6875 13.2326 1.74676 13.3381 1.85225C13.4436 1.95774 13.5029 2.10082 13.5029 2.25C13.5029 2.39918 13.4436 2.54226 13.3381 2.64775C13.2326 2.75324 13.0895 2.8125 12.9404 2.8125H11.8154V3.9375C11.8154 4.08668 11.7561 4.22976 11.6506 4.33525C11.5451 4.44074 11.402 4.5 11.2529 4.5C11.1037 4.5 10.9606 4.44074 10.8551 4.33525C10.7496 4.22976 10.6904 4.08668 10.6904 3.9375V2.8125H9.56536C9.41617 2.8125 9.2731 2.75324 9.16761 2.64775C9.06212 2.54226 9.00286 2.39918 9.00286 2.25ZM16.3154 5.625C16.3154 5.77418 16.2561 5.91726 16.1506 6.02275C16.0451 6.12824 15.902 6.1875 15.7529 6.1875H15.1904V6.75C15.1904 6.89918 15.1311 7.04226 15.0256 7.14775C14.9201 7.25324 14.777 7.3125 14.6279 7.3125C14.4787 7.3125 14.3356 7.25324 14.2301 7.14775C14.1246 7.04226 14.0654 6.89918 14.0654 6.75V6.1875H13.5029C13.3537 6.1875 13.2106 6.12824 13.1051 6.02275C12.9996 5.91726 12.9404 5.77418 12.9404 5.625C12.9404 5.47582 12.9996 5.33274 13.1051 5.22725C13.2106 5.12176 13.3537 5.0625 13.5029 5.0625H14.0654V4.5C14.0654 4.35082 14.1246 4.20774 14.2301 4.10225C14.3356 3.99676 14.4787 3.9375 14.6279 3.9375C14.777 3.9375 14.9201 3.99676 15.0256 4.10225C15.1311 4.20774 15.1904 4.35082 15.1904 4.5V5.0625H15.7529C15.902 5.0625 16.0451 5.12176 16.1506 5.22725C16.2561 5.33274 16.3154 5.47582 16.3154 5.625Z" fill="white"/>
             </svg>
           </button>
-        </div>
+        </form>
       </div>
       <div class="footer-catergory grid-3 w-75">
           <div> <img src="assets/images/icons/Automation-driven.svg" alt="icon-img"> <span>Automation-driven</span></div>
@@ -419,6 +653,7 @@
    <div class="bg-gradient-bottom position-absolute bottom-0">
     <img src="assets/images/hero_bgs.svg" class="w-100" alt="bg" />
   </div>
+  
 </body>
 <!-- Bootstrap 5 JS Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

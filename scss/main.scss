@@ -30,7 +30,7 @@
 .custom-btn {
     @include flex($justify: center, $wrap: nowrap);
     border-radius: 8px;
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-weight: 500;
     font-size: $size-sm;
     border: none;
@@ -47,7 +47,11 @@
     @include button-variant($primary-color, $white, $hover-bg: $secondary-color);
 }
 .btn-secondary {
-    @include button-variant($secondary-color, $white, $hover-opacity: 0.85);
+    @include button-variant($secondary-color, $white);
+}
+.btn-outline-primary {
+    @include button-variant($white, $secondary-color);
+    border: 1px solid $secondary-color;
 }
 ////////////// Spacing Classes ///////////
 .gap-sm {
@@ -72,12 +76,15 @@
    height: 100%;
    object-fit: cover;
 }
+.min-btn-width {
+    min-width: 150px;
+}
 .custom-ul {
     padding: 0px;
     margin: 0px;
     list-style: none;
 }
-.custom-link {
+.custom-anc {
     text-decoration: none;
 }
 .custom-card {
@@ -108,7 +115,7 @@
 
     &--sm {
         border-radius: 16px;
-        padding: 2rem;
+        padding: 1.6rem;
         &:hover {
             transform: none;
         }
@@ -124,6 +131,10 @@
     background: rgba($primary-color, 0.05) !important;
     box-shadow: 0 1px 1px -0.5px rgba(0, 0, 0, 0.04), 0 3px 3px -1.5px rgba(0, 0, 0, 0.04), 0 24px 24px -12px rgba(0, 0, 0, 0.04);
    }
+}
+.form-actions {
+        margin-top: 1rem;
+        @include flex($justify: flex-end, $gap: 1rem);
 }
 //////////// Grid System ///////////
 .grid-2 {
@@ -363,19 +374,12 @@
     padding: 0px;
 }
 /////////////// Form Style /////////////////
-.custom-label {
-    display: block;
-    color: $desc-color;
-    font-size: $size-sm;
-    font-weight: 500;
-    margin-bottom: 0.4rem; 
-}
 .custom-form {
     .form-label {
        @extend .custom-label;
+        .req-star { color: #ff4d4d; margin-inline-start: 4px; }
     }
-
-    .form-control-custom {
+.form-control, .form-select , .form-control-custom {
         width: 100%;
         background-color: $light-gray-color;
         border: 1px solid rgba(255, 255, 255, 0.15);
@@ -397,12 +401,41 @@
             box-shadow: 0 0 0 1px rgba($secondary-color, 0.5);
         }
     }
-
     textarea.form-control-custom {
         resize: none;
         height: auto;
     }
 }
+.upload-area {
+    border: 2px dashed $gray-color;
+    border-radius: 16px;
+    padding: 3rem 2rem;
+    @include flex($direction: column, $justify: center, $gap: .8rem);
+    background: $light-gray-color;
+    cursor: pointer;
+    transition: $transition-base;
+
+    &:hover {
+        border-color: $primary-color;
+        background: rgba($primary-color, 0.02);
+    }
+    .upload-text {
+        font-size: 16px;
+        font-weight: 400;
+        color: $desc-color;
+        span {
+            color: $primary-color;
+        }
+    }
+}
+.custom-label {
+    display: block;
+    color: $desc-color;
+    font-size: $size-sm;
+    font-weight: 500;
+    margin-bottom: 0.4rem; 
+}
+
 /////////////// Media Query ////////////////
 @media screen and (max-width: $media-md) {
     .grid-2 { 

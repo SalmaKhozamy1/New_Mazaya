@@ -141,7 +141,7 @@
         position: absolute;
         bottom: 40px;
         right: $main-inline-padding;
-        background-color: #f8f9fa;
+        background-color: $gray-color;
         border-radius: 20px;
         padding: 4px;
         @include flex;
