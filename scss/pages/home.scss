@@ -180,7 +180,7 @@
 
         .talk-badge-circular {
             position: absolute;
-            bottom: -10px;
+            bottom: 8px;
             right: -5.5vw;
             width: 150px;
             height: 150px;
@@ -241,96 +241,30 @@
         margin-bottom: 4rem;
     }
     .clarity-card {
-        border-radius: 40px; 
-        background: radial-gradient(130.67% 120.5% at 50% 100%, #151515 0%, #000 100%);
-        padding: 2rem; 
-        position: relative; 
-        overflow: hidden; 
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        @include flex($direction: column, $gap: 1rem);
-        
-        &::before {
-            content: ""; position: absolute; bottom: -10%; left: -10%; width: 50%; height: 50%; 
-            background: radial-gradient(circle, rgba($primary-color, 0.6) 0%, transparent 80%); 
-            filter: blur(60px); pointer-events: none; z-index: 0;
-        }
-        &::after {
-            content: ""; position: absolute; top: -5%; right: -5%; width: 50%; height: 50%; 
-            background: radial-gradient(circle, rgba($primary-color, 0.6) 0%, transparent 90%); 
-            filter: blur(60px); pointer-events: none; z-index: 0;
-        }
-        .clarity-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
-        .clarity-logo { 
-            position: relative; 
-            z-index: 2;
-            width: 100%; 
-            img { 
-                width: 200px; 
-            } 
-        }
+        position: relative;
     }
-    .clarity-content {
-        @include flex($align: stretch, $gap: 2rem); position: relative; z-index: 2; width: 100%;
-        @media (max-width: 991px) { flex-direction: column; }
-    }
-    .complexity-sidebar {
-        flex: 1; @include flex($direction: column, $align: flex-start, $gap: 0.8rem);
-        .flow-pill {
-            padding: 12px 24px; border-radius: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); color: rgba(255, 255, 255, 0.4); font-size: 16px; font-weight: 500; width: 100%; max-width: 320px; transition: $transition-base;
-            &.active { background: linear-gradient(90deg, rgba($primary-color, 0.1) 0%, rgba($primary-color, 0.02) 100%); border: 1px solid rgba($primary-color, 0.4); color: #fff; box-shadow: 0 0 20px rgba($primary-color, 0.05); }
+    .clarity-text {
+        @include flex($direction: column, $align: start, $gap:clamp(5px, .7vw, 15px));
+        color: #fff;
+        text-align: start;
+        position: absolute;
+        inset-inline-start: 5%;
+        bottom: 5%;
+        transform: translate(0,0);
+        margin-bottom: 0px;
+        h2 , h2 > span {
+        font-size: clamp(5px,2.4vw, 34px) !important;
+        font-weight: 600;
+        display: inline;
+        max-width: 50%;
         }
-    }
-    .path-visual-container {
-        flex: 2; position: relative; min-height: 400px;
-        .path-labels { position: absolute; inset: 0; z-index: 3; }
-        .path-pill {
-            position: absolute; padding: 8px 20px; background: rgba(40, 40, 40, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; color: #fff; font-size: 14px; font-weight: 500; box-shadow: 0 4px 15px rgba(0,0,0,0.3); white-space: nowrap;
-            &.label-1 { bottom: 20%; left: 10%; }
-            &.label-2 { bottom: 18%; left: 45%; }
-            &.label-3 { bottom: 50%; left: 42%; }
-            &.label-4 { bottom: 73%; left: 70%; }
-            &.label-top { top: 0% !important; right: 0%; background: $primary-color; border: none; font-weight: 600; padding: 12px 24px; box-shadow: 0 0 30px rgba($primary-color, 0.4); }
-        }
-        .svg-wrapper { position: absolute; inset: 0; z-index: 2; }
-    }
-    .clarity-footer-row {
-        @include flex($justify: space-between, $gap: 4rem); position: relative; z-index: 2; width: 100%;
-        @media (max-width: 991px) { flex-direction: column; align-items: flex-start; gap: 2rem; }
-        .footer-left { 
-          @include flex($direction: column, $align: flex-start, $gap: 2rem); 
-          .clarity-title { 
-            font-size: 34px; font-weight: 600; color: #fff; line-height: 1.1; 
-            span { color: $primary-color; } 
-            @media (max-width: 767px) { font-size: 2.5rem; } 
-          } 
-        }
-        .footer-right { 
-          .clarity-bullet-list { 
-            @include flex($direction: column, $align: flex-start, $gap: 1.5rem); 
-            li { 
-              @include flex($align: center, $gap: 16px, $wrap:nowrap); 
-              color: #fff;
-              font-size: $size-xs;  
-              font-weight: 600;
-              .check-icon {
-                @include flex($justify: center); 
-                flex-shrink: 0; 
-              }
-            } 
-          } 
-        }
-    }
-    .clarity-stats-row {
-        margin-top: 13px;
-        border-radius: 16px;
-        .stat-item {
-            text-align: center;
-            .stat-number {
-                font-size: 32px;
-                font-weight: 600;
-                color: $primary-color;
-                margin-bottom: 0.5rem;
-            }
+        a {
+         font-size: clamp(6px, 1.2vw, 14px);
+         padding: clamp(1px, 0.5vw, 12px) clamp(5px, 1vw, 20px);
+         svg {
+width: clamp(6px, 1vw, 14px);
+height: clamp(6px, 1vw, 14px);
+         }
         }
     }
 }

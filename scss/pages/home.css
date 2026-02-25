@@ -295,7 +295,7 @@
 }
 .hero .hero-visuals .talk-badge-circular {
   position: absolute;
-  bottom: -10px;
+  bottom: 8px;
   right: -5.5vw;
   width: 150px;
   height: 150px;
@@ -372,234 +372,36 @@
   margin-bottom: 4rem;
 }
 .clarity-section .clarity-card {
-  border-radius: 40px;
-  background: radial-gradient(130.67% 120.5% at 50% 100%, #151515 0%, #000 100%);
-  padding: 2rem;
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.clarity-section .clarity-text {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(5px, 0.7vw, 15px);
   flex-wrap: wrap;
-}
-.clarity-section .clarity-card::before {
-  content: "";
-  position: absolute;
-  bottom: -10%;
-  left: -10%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(240, 93, 42, 0.6) 0%, transparent 80%);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 0;
-}
-.clarity-section .clarity-card::after {
-  content: "";
-  position: absolute;
-  top: -5%;
-  right: -5%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(240, 93, 42, 0.6) 0%, transparent 90%);
-  filter: blur(60px);
-  pointer-events: none;
-  z-index: 0;
-}
-.clarity-section .clarity-card .clarity-grid {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-}
-.clarity-section .clarity-card .clarity-logo {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-.clarity-section .clarity-card .clarity-logo img {
-  width: 200px;
-}
-.clarity-section .clarity-content {
-  display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-direction: row;
-  gap: 2rem;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-@media (max-width: 991px) {
-  .clarity-section .clarity-content {
-    flex-direction: column;
-  }
-}
-.clarity-section .complexity-sidebar {
-  flex: 1;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-.clarity-section .complexity-sidebar .flow-pill {
-  padding: 12px 24px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 16px;
-  font-weight: 500;
-  width: 100%;
-  max-width: 320px;
-  transition: all 0.3s ease;
-}
-.clarity-section .complexity-sidebar .flow-pill.active {
-  background: linear-gradient(90deg, rgba(240, 93, 42, 0.1) 0%, rgba(240, 93, 42, 0.02) 100%);
-  border: 1px solid rgba(240, 93, 42, 0.4);
   color: #fff;
-  box-shadow: 0 0 20px rgba(240, 93, 42, 0.05);
-}
-.clarity-section .path-visual-container {
-  flex: 2;
-  position: relative;
-  min-height: 400px;
-}
-.clarity-section .path-visual-container .path-labels {
+  text-align: start;
   position: absolute;
-  inset: 0;
-  z-index: 3;
+  inset-inline-start: 5%;
+  bottom: 5%;
+  transform: translate(0, 0);
+  margin-bottom: 0px;
 }
-.clarity-section .path-visual-container .path-pill {
-  position: absolute;
-  padding: 8px 20px;
-  background: rgba(40, 40, 40, 0.8);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50px;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  white-space: nowrap;
-}
-.clarity-section .path-visual-container .path-pill.label-1 {
-  bottom: 20%;
-  left: 10%;
-}
-.clarity-section .path-visual-container .path-pill.label-2 {
-  bottom: 18%;
-  left: 45%;
-}
-.clarity-section .path-visual-container .path-pill.label-3 {
-  bottom: 50%;
-  left: 42%;
-}
-.clarity-section .path-visual-container .path-pill.label-4 {
-  bottom: 73%;
-  left: 70%;
-}
-.clarity-section .path-visual-container .path-pill.label-top {
-  top: 0% !important;
-  right: 0%;
-  background: #F05D2A;
-  border: none;
+.clarity-section .clarity-text h2, .clarity-section .clarity-text h2 > span {
+  font-size: clamp(5px, 2.4vw, 34px) !important;
   font-weight: 600;
-  padding: 12px 24px;
-  box-shadow: 0 0 30px rgba(240, 93, 42, 0.4);
+  display: inline;
+  max-width: 50%;
 }
-.clarity-section .path-visual-container .svg-wrapper {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.clarity-section .clarity-text a {
+  font-size: clamp(6px, 1.2vw, 14px);
+  padding: clamp(1px, 0.5vw, 12px) clamp(5px, 1vw, 20px);
 }
-.clarity-section .clarity-footer-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  gap: 4rem;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-@media (max-width: 991px) {
-  .clarity-section .clarity-footer-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-}
-.clarity-section .clarity-footer-row .footer-left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.clarity-section .clarity-footer-row .footer-left .clarity-title {
-  font-size: 34px;
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.1;
-}
-.clarity-section .clarity-footer-row .footer-left .clarity-title span {
-  color: #F05D2A;
-}
-@media (max-width: 767px) {
-  .clarity-section .clarity-footer-row .footer-left .clarity-title {
-    font-size: 2.5rem;
-  }
-}
-.clarity-section .clarity-footer-row .footer-right .clarity-bullet-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-.clarity-section .clarity-footer-row .footer-right .clarity-bullet-list li {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: row;
-  gap: 16px;
-  flex-wrap: nowrap;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-}
-.clarity-section .clarity-footer-row .footer-right .clarity-bullet-list li .check-icon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 5px;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-}
-.clarity-section .clarity-stats-row {
-  margin-top: 13px;
-  border-radius: 16px;
-}
-.clarity-section .clarity-stats-row .stat-item {
-  text-align: center;
-}
-.clarity-section .clarity-stats-row .stat-item .stat-number {
-  font-size: 32px;
-  font-weight: 600;
-  color: #F05D2A;
-  margin-bottom: 0.5rem;
+.clarity-section .clarity-text a svg {
+  width: clamp(6px, 1vw, 14px);
+  height: clamp(6px, 1vw, 14px);
 }
 
 .problems-section .problem-grid {

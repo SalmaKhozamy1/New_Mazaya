@@ -43,7 +43,7 @@
         outline: none;
     }
 }
-.btn-primary {
+.primary-btn {
     @include button-variant($primary-color, $white, $hover-bg: $secondary-color);
 }
 .btn-secondary {
@@ -55,10 +55,13 @@
 }
 ////////////// Spacing Classes ///////////
 .gap-sm {
-  gap: $spacing-sm;
+  gap: $spacing-sm !important;
 }
 .gap-md {
-  gap: $spacing-md;
+  gap: $spacing-md !important;
+}
+.gap-lg  {
+    gap: $spacing-lg !important;
 }
 ////////////// Main Classes /////////////
 .w-img {
@@ -125,7 +128,7 @@
     align-items: end;
    .grid_img {
      @include flex($justify: center, $wrap: nowrap);  
-     height: clamp(400px, 75vh, 550px);
+     height: clamp(400px, 75vh, 450px);
    }
    .badge-pill {
     background: rgba($primary-color, 0.05) !important;
@@ -226,6 +229,7 @@
         }
         .main_title {
             font-size: 36px;
+            font-weight: 700;
         }
         .description {
             font-size: $size-xs;

@@ -261,10 +261,10 @@
                     }
 
                     .year-pill {
-                        background: #fff;
-                        border: 1px solid #EFEFEF;
+                        background: rgba($primary-color, 0.1);
+                        border: 1px solid rgba($primary-color, 0.3);
                         padding: 4px 12px;
-                        border-radius: 8px;
+                        border-radius: 50px;
                         font-size: 14px;
                         font-weight: 600;
                         color: $secondary-color;
@@ -276,10 +276,11 @@
 
             // Alternating layouts
             &:nth-child(even) {
-                grid-template-columns: 1fr 1.5fr;
+                // grid-template-columns: 1fr 1.5fr;
                 .journey-card { order: 2; }
                 .robot-box { 
-                    order: 1; 
+                    order: 2; 
+                    align-items: start !important;
                     img { transform: scaleX(-1); } 
                     .center-point {
                         left: auto;

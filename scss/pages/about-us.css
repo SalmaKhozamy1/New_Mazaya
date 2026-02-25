@@ -299,24 +299,22 @@
   box-shadow: 0 0 0 4px rgba(240, 93, 42, 0.1);
 }
 .History_section .journey-section .journey-item .robot-box .center-point .year-pill {
-  background: #fff;
-  border: 1px solid #EFEFEF;
+  background: rgba(240, 93, 42, 0.1);
+  border: 1px solid rgba(240, 93, 42, 0.3);
   padding: 4px 12px;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
   color: #1D5166;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   white-space: nowrap;
 }
-.History_section .journey-section .journey-item:nth-child(even) {
-  grid-template-columns: 1fr 1.5fr;
-}
 .History_section .journey-section .journey-item:nth-child(even) .journey-card {
   order: 2;
 }
 .History_section .journey-section .journey-item:nth-child(even) .robot-box {
-  order: 1;
+  order: 2;
+  align-items: start !important;
 }
 .History_section .journey-section .journey-item:nth-child(even) .robot-box img {
   transform: scaleX(-1);
