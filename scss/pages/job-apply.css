@@ -220,45 +220,94 @@
   width: 24px;
   height: 24px;
 }
-.job-apply-page .form-group .gender-switch {
+.job-apply-page .form-section-card .card-body-content {
+  padding: 1rem 0;
+}
+.job-apply-page .form-group-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+.job-apply-page .form-group-toggle .form-label {
+  margin-bottom: 0;
+  flex: 1;
+  font-weight: 500;
+  color: #000;
+}
+.job-apply-page .form-group-toggle .gender-switch {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
-.job-apply-page .form-group .gender-switch .btn-gender {
-  display: flex;
+.job-apply-page .form-group-toggle .gender-switch .btn-gender {
+  min-width: 80px;
   justify-content: center;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+.job-apply-page .form-group-toggle .gender-switch .btn-gender:has(input[value=yes]) {
+  background-color: rgba(240, 93, 42, 0.03);
+  color: #F05D2A;
+  border: 1px solid rgba(240, 93, 42, 0.05);
+}
+.job-apply-page .form-group-toggle .gender-switch .btn-gender:has(input[value=yes]):has(input:checked) {
+  background-color: rgba(240, 93, 42, 0.1);
+  border-color: rgba(240, 93, 42, 0.3);
+}
+.job-apply-page .form-group-toggle .gender-switch .btn-gender:has(input[value=no]) {
+  background: rgba(0, 0, 0, 0.05);
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+.job-apply-page .form-group-toggle .gender-switch .btn-gender:has(input[value=no]):has(input:checked) {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.job-apply-page .form-group-toggle .gender-switch .btn-gender:hover:not(:has(input:checked)) {
+  opacity: 0.8;
+}
+@media screen and (max-width: 768px) {
+  .job-apply-page .form-group-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+  .job-apply-page .form-group-toggle .gender-switch {
+    width: 100%;
+  }
+  .job-apply-page .form-group-toggle .gender-switch .btn-gender {
+    flex: 1;
+  }
+}
+.job-apply-page .add-position-btn {
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   flex-direction: row;
-  gap: 10px;
+  gap: 8px;
   flex-wrap: wrap;
-  background: #f7f7f7;
-  border: 1px solid transparent;
-  padding: 11px 20px;
-  border-radius: 8px;
-  color: #606060;
+  background: transparent;
+  border: none;
+  color: #1D5166;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 14px;
+  width: 100%;
 }
-.job-apply-page .form-group .gender-switch .btn-gender svg {
-  width: 20px;
-  height: 20px;
-  color: #aaa;
-}
-.job-apply-page .form-group .gender-switch .btn-gender:has(input:checked) {
-  background: rgba(240, 93, 42, 0.05);
-  border-color: rgba(240, 93, 42, 0.2);
-  color: #F05D2A;
-}
-.job-apply-page .form-group .gender-switch .btn-gender:has(input:checked) svg {
-  color: #F05D2A;
-}
-.job-apply-page .form-group .gender-switch .btn-gender:hover:not(:has(input:checked)) {
-  background: #eee;
+.job-apply-page .add-position-btn:hover {
+  opacity: 0.8;
 }
 
 @keyframes fadeIn {

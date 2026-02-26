@@ -182,39 +182,100 @@
                 svg { width: 24px; height: 24px; }
             }
         }
+
+        // Inner card body padding
+        .card-body-content {
+            padding: 1rem 0;
+        }
     }
 
-    // Form Controls
-    .form-group {
+    // Health Information Toggles
+    .form-group-toggle {
+        @include flex($justify: space-between, $align: center, $gap: 1.5rem);
+        width: 100%;
+        margin-bottom: 1.2rem;
+
+        .form-label {
+            margin-bottom: 0;
+            flex: 1;
+            font-weight: 500;
+            color: $font-color;
+        }
+
         .gender-switch {
-            @include flex($gap: 1rem);
+            @include flex($gap: 0.8rem);
             
             .btn-gender {
-                @include flex($justify: center, $gap: 10px);
-                background: #f7f7f7;
-                border: 1px solid transparent;
-                padding: 11px 20px;
+                min-width: 80px;
+                justify-content: center;
+                padding: 10px 20px;
+                font-size: $size-sm;
                 border-radius: 8px;
-                color: $desc-color;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.3s ease;
+                text-align: center;
+                border: 1px solid transparent;
 
-                svg { width: 20px; height: 20px; color: #aaa; }
-
-                &:has(input:checked) {
-                    background: rgba($primary-color, 0.05);
-                    border-color: rgba($primary-color, 0.2);
+                // Target "Yes" button label
+                &:has(input[value="yes"]) {
+                    background-color: rgba($primary-color, 0.03);
                     color: $primary-color;
-                    svg { color: $primary-color; }
+                    border: 1px solid rgba($primary-color, 0.05);
+                    
+                    &:has(input:checked) {
+                        background-color: rgba($primary-color, 0.1);
+                        border-color: rgba($primary-color, 0.3);
+                    }
+                }
+
+                // Target "No" button label
+                &:has(input[value="no"]) {
+                    background: rgba(0, 0, 0, 0.05);
+                    border: 0.5px solid rgba(0, 0, 0, 0.10);
+                    color: $font-color;
+
+                    &:has(input:checked) {
+                        background: rgba(0, 0, 0, 0.1);
+                        border-color: rgba(0, 0, 0, 0.2);
+                    }
                 }
 
                 &:hover:not(:has(input:checked)) {
-                    background: #eee;
+                    opacity: 0.8;
                 }
             }
         }
     }
+
+    // Media adjustments for toggles
+    @media screen and (max-width: $media-sm) {
+        .form-group-toggle {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
+
+            .gender-switch {
+                width: 100%;
+                .btn-gender {
+                    flex: 1;
+                }
+            }
+        }
+    }
+
+
+.add-position-btn {
+    @include flex($justify: flex-end, $gap: 8px);
+    background: transparent;
+    border: none;
+    color: $secondary-color;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-base;
+    font-size: $size-xs;
+    width: 100%;
+    &:hover {
+        opacity: 0.8;
+    }
+}
 
 }
 

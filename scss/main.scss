@@ -26,6 +26,9 @@
 .secondary-color {
     color: $secondary-color !important;
 }
+.desc-color {
+    color: $desc-color !important;
+}
 ////////////// Buttons /////////////
 .custom-btn {
     @include flex($justify: center, $wrap: nowrap);
@@ -136,7 +139,6 @@
    }
 }
 .form-actions {
-        margin-top: 1rem;
         @include flex($justify: flex-end, $gap: 1rem);
 }
 //////////// Grid System ///////////
@@ -171,7 +173,6 @@
     color: $desc-color;
 }
 %text-block-base {
-    max-width: 1000px;
     margin-bottom: 2rem;
     @include flex($direction: column, $gap: 1.1rem);
     
@@ -196,6 +197,7 @@
     @include flex($direction: column, $justify: center, $gap: 1.1rem);
     text-align: center;
     margin-inline: auto;
+    max-width: 1000px;
 
     .main_title {
         font-size: $size-xxl;
@@ -248,6 +250,8 @@
         inset-inline-start: 0;
         inset-block-end: 10%;
         padding-inline: $main-inline-padding;
+        max-width: none;
+        width: 100%;
     }
     }
     .main-text {
@@ -383,12 +387,12 @@
        @extend .custom-label;
         .req-star { color: #ff4d4d; margin-inline-start: 4px; }
     }
-.form-control, .form-select , .form-control-custom {
+    .form-control, .form-select , .form-control-custom {
         width: 100%;
         background-color: $light-gray-color;
         border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 8px;
-        padding: .8rem .8rem;
+        padding: .6rem .6rem;
         font-size: 16px;
         color: $font-color;
         outline: none;
@@ -408,6 +412,68 @@
     textarea.form-control-custom {
         resize: none;
         height: auto;
+    }
+    // Form Controls
+    .form-group {
+        &.has-icon {
+            position: relative;
+            .input-icon {
+                position: absolute;
+                right: 15px;
+                bottom: 15px;
+                pointer-events: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+            .form-control {
+                padding-right: 45px;
+                &::-webkit-calendar-picker-indicator {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 45px;
+                    height: 100%;
+                    background: transparent;
+                    color: transparent;
+                    cursor: pointer;
+                    opacity: 0;
+                    z-index: 3;
+                }
+            }
+        }
+        .gender-switch {
+            @include flex($gap: 1rem);
+            
+            .btn-gender {
+                @include flex($justify: center, $gap: 10px);
+                background: #f7f7f7;
+                border: 1px solid transparent;
+                padding: 11px 20px;
+                border-radius: 8px;
+                color: $desc-color;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                svg { width: 20px; height: 20px; color: #aaa; }
+
+                &:has(input:checked) {
+                    background: rgba($primary-color, 0.05);
+                    border-color: rgba($primary-color, 0.2);
+                    color: $primary-color;
+                    svg { color: $primary-color; }
+                }
+
+                &:hover:not(:has(input:checked)) {
+                    background: #eee;
+                }
+            }
+        }
     }
 }
 .upload-area {
@@ -439,12 +505,110 @@
     font-weight: 500;
     margin-bottom: 0.4rem; 
 }
+/* Flatpicker style */
+.flatpickr-calendar {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+
+    .flatpickr-months {
+        background-color: $primary-color;
+        padding: 8px;
+        color: #fff;
+        border-radius: 16px 16px 0 0;
+
+        .flatpickr-prev-month,
+        .flatpickr-next-month {
+            position: static !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            fill: #fff !important;
+            color: #fff !important;
+            font-weight: 800;
+            font-size: 20px;
+            transition: all 0.3s ease;
+
+            &:hover {
+                svg {
+                    fill: rgba(255, 255, 255, 0.7) !important;
+                }
+            }
+        }
+
+        .flatpickr-current-month {
+            display: flex !important;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            width: 100% !important;
+            position: static !important;
+            padding: 0 0px !important;
+
+            .numInputWrapper,
+            .flatpickr-monthDropdown-months {
+                width: auto !important;
+                flex: 1;
+
+                &:hover {
+                    background-color: transparent !important;
+                }
+            }
+
+            .numInput.cur-year {
+                direction: ltr !important;
+                color: #fff !important;
+            }
+
+            select.flatpickr-monthDropdown-months {
+                color: #fff !important;
+                font-family: inherit;
+                font-weight: 600;
+
+                option {
+                    color: $font-color !important;
+                    background: #fff;
+                }
+            }
+        }
+    }
+
+    .flatpickr-day {
+        &:hover {
+            background-color: rgba($primary-color, 0.03) !important;
+            border-color: rgba($primary-color, 0.03);
+        }
+
+        &.selected,
+        &.startRange,
+        &.endRange {
+            background-color: $primary-color !important;
+            border-color: $primary-color !important;
+            border-radius: 50% !important;
+            color: #fff !important;
+        }
+
+        &.today {
+            border: 1px solid $primary-color !important;
+            color: $primary-color !important;
+            
+            &.selected {
+                color: #fff !important;
+            }
+        }
+    }
+
+    // Custom toolbar if used 
+    .calendar-toolbar {
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px;
+    }
+}
 
 /////////////// Media Query ////////////////
 @media screen and (max-width: $media-md) {
-    .grid-2 { 
-        grid-template-columns: 100%; 
-    }
     .grid-4 {
         grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
     }
@@ -454,7 +618,7 @@
     $main-inline-padding: clamp(1rem, 3vw, 3rem);
 }
 @media screen and (max-width: $media-sm) {
-    .grid-3 , .grid-4 { 
+    .grid-2 , .grid-3 , .grid-4 { 
         grid-template-columns: 100%; 
     }
     .grid-5 {

@@ -49,8 +49,8 @@ $breakpoints: (
 
 // Badge Pill Mixin
 @mixin badge-pill($bg: $light-primary-color, $color: $primary-color) {
-    @include flex($gap: 6px);
-    padding: 4px 16px;
+    @include flex($gap: 6px, $wrap: nowrap);
+    padding: 6px 16px;
     background: $bg;
     color: $color;
     font-size: $size-sm;
@@ -76,3 +76,64 @@ $breakpoints: (
     }
 }
       
+// Senior-level dynamic card generator
+@mixin card-robot-variant($name) {
+    .#{$name}-card {
+        @include flex($gap: 2rem, $justify: center);
+
+        &__item {
+            @include flex($direction: column, $justify: center, $align: center, $wrap: nowrap, $gap: 0.5rem);
+            text-align: center;
+            max-width: 400px;
+            padding: 0;
+        }
+
+        &__icon {
+            width: 40px;
+            height: 32px;
+            margin-bottom: 0.5rem;
+        }
+
+        &__title {
+            font-size: $size-md;
+            font-weight: 600;
+            color: $secondary-color;
+        }
+
+        &__desc {
+            font-size: 15px; 
+            font-weight: 400;
+            color: $desc-color;
+        }
+
+        &__robot {
+            width: 100%;
+            max-height: 450px;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.12));
+            pointer-events: none;
+        }
+
+        // Handles the nested flex containers (integration-flex, products-flex)
+        .#{$name}-flex {
+            @include flex($direction: column, $gap: 1rem);
+        }
+
+        @media screen and (max-width: $media-md) {
+            .grid-3 {
+                grid-template-columns: 100%;
+            }
+            .#{$name}-flex {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+            }
+        }
+
+        @media screen and (max-width: $media-sm) {
+            .#{$name}-flex {
+                margin: auto;
+                max-width: 75%;
+                grid-template-columns: 100%;
+            }
+        }
+    }
+}
